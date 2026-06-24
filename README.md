@@ -1,4 +1,3 @@
-[index (3).html](https://github.com/user-attachments/files/29254074/index.3.html)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -479,7 +478,6 @@
   .project-visual.cad1 { background: linear-gradient(135deg, #0f2d4a, #1a4a6e); }
   .project-visual.cad2 { background: linear-gradient(135deg, #0d3b2e, #1a6b50); }
   .project-visual.cad3 { background: linear-gradient(135deg, #2d1a0f, #6e3a1a); }
-  .project-visual.gis1 { background: linear-gradient(135deg, #1a0f2d, #3a1a6e); }
   .project-visual.ann1 { background: linear-gradient(135deg, #0f2d2d, #1a5e5e); }
   .project-visual.ann2 { background: linear-gradient(135deg, #2d2a0f, #6e5e1a); }
   .project-visual svg {
@@ -508,7 +506,7 @@
     line-height: 1.6;
     margin-bottom: 0.8rem;
   }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.9rem; }
   .project-tag {
     background: rgba(42,157,143,0.1);
     border: 1px solid rgba(42,157,143,0.25);
@@ -518,6 +516,138 @@
     font-size: 0.7rem;
     font-weight: 500;
   }
+  .project-view-btn {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: rgba(42,157,143,0.15);
+    border: 1px solid rgba(42,157,143,0.4);
+    color: var(--teal-light);
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    letter-spacing: 0.03em;
+  }
+  .project-view-btn:hover {
+    background: rgba(42,157,143,0.3);
+    border-color: var(--teal-light);
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 1000;
+    align-items: center; justify-content: center;
+    padding: 2rem;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    background: #0f1f38;
+    border: 1px solid rgba(42,157,143,0.3);
+    border-radius: 16px;
+    max-width: 820px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute; top: 1rem; right: 1rem;
+    background: rgba(255,255,255,0.1);
+    border: none; color: white;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+    z-index: 10;
+  }
+  .modal-close:hover { background: rgba(255,255,255,0.25); }
+  .modal-visual {
+    width: 100%;
+    height: 300px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .modal-visual svg { width: 260px; height: 260px; }
+  .modal-visual-label {
+    position: absolute; bottom: 1rem; left: 1rem;
+    background: rgba(0,0,0,0.6);
+    color: rgba(255,255,255,0.7);
+    font-size: 0.7rem;
+    font-family: monospace;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .modal-content { padding: 2rem; }
+  .modal-cat {
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--teal-light); margin-bottom: 0.5rem;
+  }
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; color: white;
+    margin-bottom: 1rem; line-height: 1.3;
+  }
+  .modal-desc {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.9rem; line-height: 1.8;
+    margin-bottom: 1.2rem;
+  }
+  .modal-details {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .modal-details h4 {
+    font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .modal-detail-item {
+    display: flex; gap: 0.6rem;
+    font-size: 0.83rem; color: rgba(255,255,255,0.7);
+    padding: 0.3rem 0; line-height: 1.5;
+  }
+  .modal-detail-item::before { content: '→'; color: var(--teal); flex-shrink: 0; }
+  .modal-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .project-view-btn {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-top: 1rem;
+    background: transparent;
+    border: 1px solid rgba(42,157,143,0.4);
+    color: var(--teal-light);
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .project-view-btn:hover {
+    background: rgba(42,157,143,0.15);
+    border-color: var(--teal-light);
+    color: white;
+  }
+  .project-visual img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  .project-card:hover .project-visual img { transform: scale(1.04); }
+
   @media (max-width: 768px) {
     .projects-grid { grid-template-columns: 1fr 1fr; }
   }
@@ -558,9 +688,9 @@
   <div class="hero-inner">
     <div class="hero-eyebrow">Available for New Opportunities</div>
     <h1>Segun<br><span>Olukayode</span></h1>
-    <p class="hero-sub">Data Analyst · AI Annotation Specialist · CAD · HRIS</p>
+    <p class="hero-sub">CAD Annotation Specialist · AI Training Data · Data Analyst</p>
     <p class="hero-desc">
-      Turning complex data into reliable, actionable insights. From HRIS workflows and supply chain reporting to AI training data annotation and CAD model validation — I bring precision to every dataset.
+      Detail-oriented data professional with hands-on experience in CAD modelling, AI training data preparation, and operational reporting. I bring precision and consistency to every technical task.
     </p>
     <div class="hero-actions">
       <a href="mailto:pallyleke@gmail.com" class="btn-primary">✉ Get in Touch</a>
@@ -568,8 +698,8 @@
     </div>
     <div class="hero-stats">
       <div>
-        <span class="stat-num">2+</span>
-        <span class="stat-label">Years in Data & Ops</span>
+        <span class="stat-num">8+</span>
+        <span class="stat-label">CAD Tools Proficient</span>
       </div>
       <div>
         <span class="stat-num">MSc</span>
@@ -587,40 +717,40 @@
 <section id="about">
   <div class="section-inner">
     <p class="section-label">Who I Am</p>
-    <h2 class="section-title">Data-driven. Detail-obsessed.<br>People-focused.</h2>
+    <h2 class="section-title">Data-driven. Detail-obsessed.<br>Technically versatile.</h2>
     <div class="about-grid">
       <div class="about-text">
         <p>
-          I'm an HRIS and Data Analyst with a Master's degree in Logistics & Supply Chain Management and hands-on experience across HR technology, operational reporting, and inventory systems.
+          I'm a CAD Annotation Specialist and Data Analyst with hands-on experience across professional CAD tools, AI training data preparation, and high-volume data operations.
         </p>
         <p>
-          My background spans high-volume logistics at DHL, precision inventory auditing at RGIS, and ongoing self-directed HRIS development — building expertise in UKG Pro, iCIMS ATS, and U.S. HR compliance workflows.
+          My background spans logistics reporting at DHL, precision inventory auditing at RGIS, and independent CAD and annotation work — building expertise across FreeCAD, AutoCAD Mechanical, AutoDesk Inventor, Rhino 3D, VectorWorks, BlenderBIM/Bonsai, LibreCAD, and SolveSpace.
         </p>
         <p>
-          I bring a methodical approach to every dataset: validating it, mapping the process around it, and delivering reporting that teams can actually trust.
+          I thrive in remote, self-managed environments and bring the same rigour I developed in data operations to every annotation and modelling task I take on.
         </p>
       </div>
       <div class="about-highlight">
         <h3>Core Strengths</h3>
         <div class="highlight-item">
           <span class="highlight-dot"></span>
-          <span>HRIS workflow documentation and system-based problem analysis</span>
+          <span>Proficient across a wide range of professional CAD and BIM tools</span>
         </div>
         <div class="highlight-item">
           <span class="highlight-dot"></span>
-          <span>Data validation, auditing, and reporting accuracy at scale</span>
+          <span>Experienced in 3D digital asset annotation and AI training data preparation</span>
         </div>
         <div class="highlight-item">
           <span class="highlight-dot"></span>
-          <span>SQL-driven data analysis and process improvement</span>
+          <span>Strong data validation and quality assurance discipline from operational roles</span>
         </div>
         <div class="highlight-item">
           <span class="highlight-dot"></span>
-          <span>Cross-functional collaboration and stakeholder communication</span>
+          <span>Reliable remote worker with strong written and spoken English (C2)</span>
         </div>
         <div class="highlight-item">
           <span class="highlight-dot"></span>
-          <span>U.S. HR systems, compliance standards, and ATS workflows</span>
+          <span>MSc-level analytical thinking applied to complex technical tasks</span>
         </div>
       </div>
     </div>
@@ -632,42 +762,42 @@
   <div class="section-inner">
     <p class="section-label">Capabilities</p>
     <h2 class="section-title">Skills & Tools</h2>
-    <p class="section-intro">A toolkit spanning HR technology, AI data annotation, CAD modelling, GIS, and data operations.</p>
+    <p class="section-intro">CAD tools, AI annotation, and data operations — built for professional AI research projects.</p>
     <div class="skills-grid">
       <div class="skill-card">
-        <div class="skill-icon">🤖</div>
-        <h3>AI Data Annotation</h3>
-        <div class="skill-tags">
-          <span class="tag">3D CAD Annotation</span>
-          <span class="tag">Bounding Boxes</span>
-          <span class="tag">Semantic Segmentation</span>
-          <span class="tag">Point Cloud Labelling</span>
-          <span class="tag">Object Classification</span>
-          <span class="tag">Quality Review</span>
-        </div>
-      </div>
-      <div class="skill-card">
         <div class="skill-icon">🏗️</div>
-        <h3>CAD Tools</h3>
+        <h3>CAD Modelling Tools</h3>
         <div class="skill-tags">
           <span class="tag">FreeCAD</span>
           <span class="tag">AutoCAD Mechanical</span>
           <span class="tag">AutoDesk Inventor</span>
           <span class="tag">Rhino 3D</span>
-          <span class="tag">BlenderBIM/Bonsai</span>
-          <span class="tag">LibreCAD</span>
+          <span class="tag">VectorWorks</span>
+          <span class="tag">LibreCAD / QCAD CE</span>
           <span class="tag">SolveSpace</span>
         </div>
       </div>
-
       <div class="skill-card">
-        <div class="skill-icon">🗄️</div>
-        <h3>HRIS Platforms</h3>
+        <div class="skill-icon">🧱</div>
+        <h3>BIM & IFC Tools</h3>
         <div class="skill-tags">
-          <span class="tag">UKG Pro</span>
-          <span class="tag">iCIMS ATS</span>
-          <span class="tag">Workflow Mapping</span>
-          <span class="tag">System Analysis</span>
+          <span class="tag">FreeCAD BIM / IFC</span>
+          <span class="tag">BlenderBIM / Bonsai</span>
+          <span class="tag">Structural Modelling</span>
+          <span class="tag">Digital Twin Assets</span>
+          <span class="tag">IFC Standards</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🤖</div>
+        <h3>AI Data Annotation</h3>
+        <div class="skill-tags">
+          <span class="tag">3D CAD Annotation</span>
+          <span class="tag">Digital Asset Refinement</span>
+          <span class="tag">Bounding Boxes</span>
+          <span class="tag">Semantic Segmentation</span>
+          <span class="tag">Point Cloud Labelling</span>
+          <span class="tag">Quality Review</span>
         </div>
       </div>
       <div class="skill-card">
@@ -682,13 +812,25 @@
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-icon">🧩</div>
-        <h3>HR & Compliance</h3>
+        <div class="skill-icon">🗄️</div>
+        <h3>HRIS & People Systems</h3>
         <div class="skill-tags">
+          <span class="tag">UKG Pro</span>
+          <span class="tag">iCIMS ATS</span>
+          <span class="tag">Workflow Mapping</span>
           <span class="tag">U.S. HR Compliance</span>
-          <span class="tag">HR Operations</span>
-          <span class="tag">People Systems</span>
-          <span class="tag">ATS Workflows</span>
+          <span class="tag">System Analysis</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚙️</div>
+        <h3>Work Style</h3>
+        <div class="skill-tags">
+          <span class="tag">Remote-Ready</span>
+          <span class="tag">Self-Managed</span>
+          <span class="tag">Detail-Oriented</span>
+          <span class="tag">Analytical Thinking</span>
+          <span class="tag">English C2</span>
         </div>
       </div>
     </div>
@@ -700,129 +842,169 @@
   <div class="section-inner">
     <p class="section-label">Portfolio</p>
     <h2 class="section-title">Projects & Work Samples</h2>
-    <p class="section-intro">Hands-on work across CAD annotation, geospatial analysis, and AI training data preparation.</p>
+    <p class="section-intro">A selection of CAD annotation, digital asset work, and data operations projects.</p>
     <div class="projects-grid">
 
+      <!-- PROJECT 1: FreeCAD Mechanical -->
       <div class="project-card">
-        <div class="project-visual cad1">
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="15" y="30" width="70" height="45" rx="2" stroke="#2a9d8f" stroke-width="2"/>
-            <line x1="15" y1="45" x2="85" y2="45" stroke="#2a9d8f" stroke-width="1.5"/>
-            <line x1="40" y1="30" x2="40" y2="75" stroke="#2a9d8f" stroke-width="1.5"/>
-            <circle cx="50" cy="20" r="6" stroke="#e9c46a" stroke-width="2"/>
-            <line x1="50" y1="26" x2="50" y2="30" stroke="#e9c46a" stroke-width="1.5"/>
-            <rect x="25" y="50" width="10" height="10" fill="rgba(42,157,143,0.3)" stroke="#2a9d8f" stroke-width="1"/>
-            <rect x="55" y="50" width="20" height="10" fill="rgba(233,196,106,0.2)" stroke="#e9c46a" stroke-width="1"/>
-          </svg>
+        <div class="project-visual" style="padding:0; height:180px; overflow:hidden;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/FreeCAD_1.0_Dark_Assembly_Example.png/800px-FreeCAD_1.0_Dark_Assembly_Example.png"
+            alt="FreeCAD Mechanical Assembly Annotation"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#0f1f38,#1a3a5c)'; this.style.display='none';">
         </div>
         <div class="project-body">
           <div class="project-cat">CAD Annotation · AI Training</div>
           <div class="project-title">Mechanical Parts Classification — FreeCAD</div>
-          <div class="project-desc">Annotated 3D mechanical assemblies using FreeCAD, labelling components, joints, and tolerances for AI model training.</div>
+          <div class="project-desc">Annotated 3D mechanical assemblies in FreeCAD, labelling components, joints, and tolerances to build training datasets for AI recognition models.</div>
           <div class="project-tags">
             <span class="project-tag">FreeCAD</span>
             <span class="project-tag">3D Labelling</span>
             <span class="project-tag">AI Training Data</span>
           </div>
+          <a href="https://www.freecad.org/features.php" target="_blank" class="project-view-btn">🔗 View Tool</a>
         </div>
       </div>
 
+      <!-- PROJECT 2: BlenderBIM Structural -->
       <div class="project-card">
-        <div class="project-visual cad2">
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="50,10 85,70 15,70" stroke="#2a9d8f" stroke-width="2" fill="rgba(42,157,143,0.1)"/>
-            <polygon points="50,25 72,65 28,65" stroke="#e9c46a" stroke-width="1.5" fill="rgba(233,196,106,0.08)"/>
-            <circle cx="50" cy="10" r="3" fill="#e9c46a"/>
-            <circle cx="85" cy="70" r="3" fill="#e9c46a"/>
-            <circle cx="15" cy="70" r="3" fill="#e9c46a"/>
-            <line x1="50" y1="10" x2="50" y2="70" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="3,3"/>
-            <rect x="42" y="72" width="16" height="8" rx="1" stroke="#2a9d8f" stroke-width="1.5" fill="rgba(42,157,143,0.15)"/>
-          </svg>
+        <div class="project-visual" style="padding:0; height:180px; overflow:hidden;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/FreeCAD_1.0_Dark_BIM_Example.png/800px-FreeCAD_1.0_Dark_BIM_Example.png"
+            alt="BIM Structural Model Annotation"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#0d3b2e,#1a6b50)'; this.style.display='none';">
         </div>
         <div class="project-body">
           <div class="project-cat">CAD · BIM Annotation</div>
           <div class="project-title">Structural Model Annotation — BlenderBIM</div>
-          <div class="project-desc">Applied semantic labels to BIM structural models, classifying beams, columns, and slabs to support digital twin development.</div>
+          <div class="project-desc">Applied semantic labels to BIM structural models in BlenderBIM/Bonsai, classifying beams, columns, and slabs to support digital twin development.</div>
           <div class="project-tags">
             <span class="project-tag">BlenderBIM</span>
             <span class="project-tag">FreeCAD BIM/IFC</span>
             <span class="project-tag">Semantic Labels</span>
           </div>
+          <a href="https://blenderbim.org/blenderbim/" target="_blank" class="project-view-btn">🔗 View Tool</a>
         </div>
       </div>
 
+      <!-- PROJECT 3: AutoCAD 2D Drawing -->
       <div class="project-card">
-        <div class="project-visual cad3">
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="20" y="20" width="25" height="25" rx="2" stroke="#e9c46a" stroke-width="2" fill="rgba(233,196,106,0.1)"/>
-            <rect x="55" y="20" width="25" height="25" rx="2" stroke="#2a9d8f" stroke-width="2" fill="rgba(42,157,143,0.1)"/>
-            <rect x="20" y="55" width="25" height="25" rx="2" stroke="#2a9d8f" stroke-width="2" fill="rgba(42,157,143,0.1)"/>
-            <rect x="55" y="55" width="25" height="25" rx="2" stroke="#e9c46a" stroke-width="2" fill="rgba(233,196,106,0.1)"/>
-            <line x1="45" y1="32" x2="55" y2="32" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
-            <line x1="32" y1="45" x2="32" y2="55" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
-            <line x1="67" y1="45" x2="67" y2="55" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
-            <line x1="45" y1="67" x2="55" y2="67" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
-          </svg>
+        <div class="project-visual" style="padding:0; height:180px; overflow:hidden;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/FreeCAD_1.0_Light_PartDesign_Pozidriv.png/800px-FreeCAD_1.0_Light_PartDesign_Pozidriv.png"
+            alt="2D Technical Drawing Annotation"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#2d1a0f,#6e3a1a)'; this.style.display='none';">
         </div>
         <div class="project-body">
-          <div class="project-cat">CAD · AutoCAD · Vectorworks</div>
+          <div class="project-cat">CAD · AutoCAD · VectorWorks</div>
           <div class="project-title">2D Technical Drawing Annotation</div>
-          <div class="project-desc">Labelled AutoCAD and VectorWorks 2D drawings for component recognition tasks, tagging dimensions, tolerances, and part references.</div>
+          <div class="project-desc">Labelled AutoCAD and VectorWorks technical drawings for AI component recognition, tagging dimensions, tolerances, part references, and assembly notes.</div>
           <div class="project-tags">
             <span class="project-tag">AutoCAD</span>
             <span class="project-tag">VectorWorks</span>
             <span class="project-tag">Dimension Tagging</span>
           </div>
+          <a href="https://www.autodesk.com/products/autocad/overview" target="_blank" class="project-view-btn">🔗 View Tool</a>
         </div>
       </div>
 
-
-
+      <!-- PROJECT 4: IBM Cognos / DHL -->
       <div class="project-card">
-        <div class="project-visual ann1">
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="20" width="80" height="60" rx="3" stroke="#2a9d8f" stroke-width="2" fill="rgba(42,157,143,0.05)"/>
-            <rect x="20" y="30" width="25" height="20" rx="1" stroke="#e9c46a" stroke-width="1.5" fill="rgba(233,196,106,0.1)"/>
-            <rect x="55" y="28" width="28" height="24" rx="1" stroke="#2a9d8f" stroke-width="1.5" fill="rgba(42,157,143,0.1)"/>
-            <rect x="18" y="58" width="64" height="12" rx="1" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="rgba(255,255,255,0.03)"/>
-            <line x1="22" y1="62" x2="50" y2="62" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-            <line x1="22" y1="66" x2="40" y2="66" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-          </svg>
+        <div class="project-visual" style="padding:0; height:180px; overflow:hidden; background:linear-gradient(135deg,#0a1f3a,#1a3a5c);">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Cognos-Analytics-11-1-7-dashboard.png/800px-Cognos-Analytics-11-1-7-dashboard.png"
+            alt="IBM Cognos Analytics Dashboard"
+            onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:0.5rem;\'><span style=\'font-size:2.5rem;\'>📊</span><span style=\'font-size:0.7rem;color:rgba(255,255,255,0.4);font-family:monospace;\'>IBM COGNOS ANALYTICS</span></div>'; this.style.display='none';">
+        </div>
+        <div class="project-body">
+          <div class="project-cat">Data Reporting · DHL</div>
+          <div class="project-title">Operational KPI Dashboard — IBM Cognos</div>
+          <div class="project-desc">Built and maintained recurring operational reports at DHL using IBM Cognos Analytics, tracking throughput, accuracy rates, and workflow efficiency across high-volume logistics shifts.</div>
+          <div class="project-tags">
+            <span class="project-tag">IBM Cognos</span>
+            <span class="project-tag">KPI Reporting</span>
+            <span class="project-tag">Data Validation</span>
+            <span class="project-tag">Logistics Ops</span>
+          </div>
+          <a href="https://www.ibm.com/products/cognos-analytics" target="_blank" class="project-view-btn">🔗 View Tool</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 5: RGIS Inventory -->
+      <div class="project-card">
+        <div class="project-visual" style="padding:0; height:180px; overflow:hidden;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Barcode_Scanner_in_Warehouse.jpg/800px-Barcode_Scanner_in_Warehouse.jpg"
+            alt="Inventory Audit at RGIS"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#0d2a1f,#1a4a35)'; this.style.display='none';">
+        </div>
+        <div class="project-body">
+          <div class="project-cat">Inventory Audit · RGIS</div>
+          <div class="project-title">Inventory Discrepancy Reporting System</div>
+          <div class="project-desc">Designed structured audit workflows at RGIS to capture stock variances across client sites. Identified discrepancy root causes and produced resolution reports improving data integrity.</div>
+          <div class="project-tags">
+            <span class="project-tag">Inventory Auditing</span>
+            <span class="project-tag">Variance Analysis</span>
+            <span class="project-tag">Data Integrity</span>
+            <span class="project-tag">Reporting</span>
+          </div>
+          <a href="https://www.rgis.com/services/" target="_blank" class="project-view-btn">🔗 View Organisation</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 6: UKG Pro / iCIMS -->
+      <div class="project-card">
+        <div class="project-visual" style="padding:0; height:180px; overflow:hidden;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/HR_Management_Software_Screenshot.png/800px-HR_Management_Software_Screenshot.png"
+            alt="UKG Pro HRIS Workflow"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1030,#2d1a50)'; this.parentElement.innerHTML+='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:0.6rem;padding:1rem;\'><div style=\'display:flex;gap:10px;width:90%;\'><div style=\'flex:1;background:rgba(233,196,106,0.1);border:1px solid rgba(233,196,106,0.4);border-radius:8px;padding:10px;\'><div style=\'font-size:0.6rem;color:#e9c46a;font-family:monospace;font-weight:700;margin-bottom:6px;\'>UKG PRO</div><div style=\'font-size:0.55rem;color:rgba(255,255,255,0.5);font-family:monospace;line-height:1.6;\'>✓ Onboarding<br>✓ Audit Log<br>✓ Compliance</div></div><div style=\'display:flex;align-items:center;color:rgba(255,255,255,0.3);font-size:0.9rem;\'>⇄</div><div style=\'flex:1;background:rgba(42,157,143,0.1);border:1px solid rgba(42,157,143,0.4);border-radius:8px;padding:10px;\'><div style=\'font-size:0.6rem;color:#2a9d8f;font-family:monospace;font-weight:700;margin-bottom:6px;\'>iCIMS ATS</div><div style=\'font-size:0.55rem;color:rgba(255,255,255,0.5);font-family:monospace;line-height:1.6;\'>✓ Pipeline<br>✓ Screening<br>✓ Workflow</div></div></div></div>'; this.style.display='none';">
+        </div>
+        <div class="project-body">
+          <div class="project-cat">HRIS · People Systems</div>
+          <div class="project-title">UKG Pro & iCIMS Workflow Documentation</div>
+          <div class="project-desc">Mapped end-to-end HRIS workflows in UKG Pro and iCIMS ATS — covering onboarding, data validation, and compliance audit trails — to support system analysis and process improvement.</div>
+          <div class="project-tags">
+            <span class="project-tag">UKG Pro</span>
+            <span class="project-tag">iCIMS ATS</span>
+            <span class="project-tag">Workflow Docs</span>
+            <span class="project-tag">Compliance</span>
+          </div>
+          <a href="https://www.ukg.com/solutions/hcm-software/hr-management" target="_blank" class="project-view-btn">🔗 View Tool</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 7: Object Detection -->
+      <div class="project-card">
+        <div class="project-visual" style="padding:0; height:180px; overflow:hidden;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Detected-with-YOLO--Schreibtisch-mit-Objekten.jpg/800px-Detected-with-YOLO--Schreibtisch-mit-Objekten.jpg"
+            alt="Object Detection Bounding Box Annotation"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#0f2d2d,#1a5e5e)'; this.style.display='none';">
         </div>
         <div class="project-body">
           <div class="project-cat">AI Annotation · Image Data</div>
           <div class="project-title">Object Detection Dataset Preparation</div>
-          <div class="project-desc">Prepared and reviewed image annotation datasets for object detection models, applying bounding boxes, polygon masks, and class labels.</div>
+          <div class="project-desc">Prepared and reviewed image annotation datasets for object detection models, applying bounding boxes, polygon masks, and class labels across thousands of frames.</div>
           <div class="project-tags">
             <span class="project-tag">Bounding Boxes</span>
             <span class="project-tag">Polygon Masks</span>
             <span class="project-tag">Class Labelling</span>
           </div>
+          <a href="https://paperswithcode.com/task/object-detection" target="_blank" class="project-view-btn">🔗 View Reference</a>
         </div>
       </div>
 
+      <!-- PROJECT 8: Point Cloud -->
       <div class="project-card">
-        <div class="project-visual ann2">
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="30" cy="40" r="12" stroke="#e9c46a" stroke-width="2" fill="rgba(233,196,106,0.1)"/>
-            <circle cx="65" cy="35" r="9" stroke="#2a9d8f" stroke-width="2" fill="rgba(42,157,143,0.1)"/>
-            <circle cx="50" cy="65" r="11" stroke="#e9c46a" stroke-width="1.5" fill="rgba(233,196,106,0.08)"/>
-            <line x1="30" y1="52" x2="42" y2="56" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="2,2"/>
-            <line x1="65" y1="44" x2="58" y2="55" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="2,2"/>
-            <text x="22" y="43" font-size="7" fill="#e9c46a" font-family="monospace">OBJ_1</text>
-            <text x="57" y="38" font-size="7" fill="#2a9d8f" font-family="monospace">OBJ_2</text>
-            <text x="42" y="68" font-size="7" fill="#e9c46a" font-family="monospace">OBJ_3</text>
-          </svg>
+        <div class="project-visual" style="padding:0; height:180px; overflow:hidden;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Point_cloud_of_a_statue.png/800px-Point_cloud_of_a_statue.png"
+            alt="3D Point Cloud Labelling"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#2d2a0f,#6e5e1a)'; this.style.display='none';">
         </div>
         <div class="project-body">
           <div class="project-cat">AI Training Data · QA</div>
           <div class="project-title">Point Cloud & 3D Object Labelling</div>
-          <div class="project-desc">Classified and labelled 3D point cloud objects for autonomous systems training, with quality assurance review at each annotation stage.</div>
+          <div class="project-desc">Classified and labelled 3D point cloud objects for autonomous systems training, with quality assurance review at each annotation stage to ensure label accuracy.</div>
           <div class="project-tags">
             <span class="project-tag">Point Cloud</span>
             <span class="project-tag">3D Object Labels</span>
             <span class="project-tag">QA Review</span>
           </div>
+          <a href="https://paperswithcode.com/task/3d-point-cloud-classification" target="_blank" class="project-view-btn">🔗 View Reference</a>
         </div>
       </div>
 
@@ -835,20 +1017,20 @@
   <div class="section-inner">
     <p class="section-label">Career Journey</p>
     <h2 class="section-title">Professional Experience</h2>
-    <p class="section-intro">Building expertise across HRIS systems, data operations, and high-volume logistics environments.</p>
+    <p class="section-intro">A career built on data precision, structured validation, and technical detail — the same skills that drive quality AI annotation work.</p>
     <div class="timeline">
 
       <div class="timeline-item">
         <div class="job-header">
-          <span class="job-title">HRIS / People Systems Analyst <span class="current-badge">Current</span></span>
+          <span class="job-title">CAD Annotation Specialist & Data Analyst <span class="current-badge">Current</span></span>
           <span class="job-date">Apr 2025 – Present</span>
         </div>
-        <div class="job-company">Independent Learning & Projects · Dallas, Texas, USA</div>
+        <div class="job-company">Independent Projects · Dallas, Texas, USA</div>
         <ul class="job-bullets">
-          <li>Developing hands-on expertise in UKG Pro and iCIMS ATS workflows, reporting, and system structures</li>
-          <li>Performing data validation, audits, and process mapping to improve reporting accuracy</li>
-          <li>Documenting HRIS workflows and supporting system-based problem analysis</li>
-          <li>Strengthening knowledge of U.S. HR systems and compliance standards</li>
+          <li>Producing annotated 3D CAD models and technical drawings using FreeCAD, AutoCAD Mechanical, Rhino 3D, VectorWorks, BlenderBIM/Bonsai, LibreCAD, and SolveSpace</li>
+          <li>Building and refining digital assets to support AI model training workflows, ensuring labelling accuracy and consistency</li>
+          <li>Applying structured data validation and quality review processes across annotation deliverables</li>
+          <li>Developing HRIS workflow documentation in UKG Pro and iCIMS ATS, supporting U.S. HR compliance analysis</li>
         </ul>
       </div>
 
@@ -910,9 +1092,9 @@
 <section id="contact">
   <div class="section-inner">
     <p class="section-label">Let's Talk</p>
-    <h2 class="section-title">Open to Opportunities</h2>
+    <h2 class="section-title">Open to New Opportunities</h2>
     <p class="contact-desc">
-      Open to HRIS analyst, AI data annotation, CAD modelling, GIS, and data reporting roles. If you're looking for someone who takes data quality and precision seriously — let's connect.
+      Available for CAD annotation, AI training data, and data analyst roles. Remote-ready, detail-oriented, and always open to interesting technical work.
     </p>
     <div class="contact-links">
       <a href="mailto:pallyleke@gmail.com" class="contact-link">✉ pallyleke@gmail.com</a>
@@ -923,7 +1105,7 @@
 </section>
 
 <footer>
-  © 2025 Segun Olukayode · Data Analyst & AI Annotation Specialist · Dallas, Texas
+  © 2025 Segun Olukayode · CAD Annotation Specialist · AI Training Data · Dallas, Texas
 </footer>
 
 </body>
