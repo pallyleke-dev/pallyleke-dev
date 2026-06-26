@@ -1,0 +1,43 @@
+# Object Detection Annotation — Bounding Box Dataset
+
+Bounding box and class label annotation for AI object detection model training.
+
+## Overview
+This repository documents object detection annotation work — applying bounding boxes, confidence zones, and class labels across image batches. Output datasets are structured for use with standard object detection frameworks.
+
+## Tools Used
+- Manual bounding box annotation
+- Class label schema design
+- QA review pipeline
+
+## Annotation Format
+```json
+{
+  "image_id": "frame_0042",
+  "annotations": [
+    {
+      "label": "PART_A",
+      "confidence": 0.94,
+      "bbox": [40, 38, 70, 55],
+      "format": "x, y, width, height"
+    },
+    {
+      "label": "PART_B",
+      "confidence": 0.87,
+      "bbox": [140, 50, 80, 65]
+    }
+  ]
+}
+```
+
+## QA Process
+1. Initial annotation pass
+2. Peer review of edge cases
+3. Confidence threshold validation
+4. Final dataset export
+
+## Status
+✅ Active
+
+---
+*Part of Segun Olukayode's AI Annotation Portfolio · [View Portfolio](https://pallyleke-dev.github.io/SEGUN-OLUKAYODE-dev/)*
