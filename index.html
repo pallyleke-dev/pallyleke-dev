@@ -7,17 +7,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0f1f38;
-    --navy-mid: #1a2f50;
-    --teal: #2a9d8f;
-    --teal-light: #3ab5a5;
-    --gold: #e9c46a;
-    --cream: #f8f5f0;
-    --text: #1a1a2e;
-    --muted: #6b7280;
+    --navy: #0a1628;
+    --navy-mid: #112240;
+    --teal: #1e8f82;
+    --teal-light: #2ec4b6;
+    --gold: #f4a261;
+    --cream: #f4f6f9;
+    --text: #0f172a;
+    --muted: #64748b;
     --white: #ffffff;
     --card-bg: #ffffff;
-    --border: #e5e7eb;
+    --border: #e2e8f0;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -655,7 +655,92 @@
     .projects-grid { grid-template-columns: 1fr; }
   }
 
-  /* RESPONSIVE */
+  /* HEADSHOT */
+  .hero-inner {
+    max-width: 1000px;
+    position: relative; z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+  }
+  .hero-content { }
+  .hero-photo {
+    width: 220px; height: 260px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid rgba(42,157,143,0.4);
+    box-shadow: 0 0 40px rgba(42,157,143,0.15);
+    flex-shrink: 0;
+    background: linear-gradient(145deg, #1a2f50, #0f1f38);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.5rem;
+  }
+  .hero-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .hero-photo-placeholder {
+    font-size: 4rem;
+    opacity: 0.4;
+  }
+  .hero-photo-label {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.3);
+    font-family: monospace;
+    letter-spacing: 0.08em;
+  }
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-photo { display: none; }
+  }
+
+  /* TESTIMONIAL */
+  #testimonial {
+    background: var(--white);
+    padding: 60px 5%;
+  }
+  .testimonial-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .testimonial-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--navy);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding: 0 2rem;
+  }
+  .testimonial-quote::before {
+    content: '"';
+    position: absolute; left: 0; top: -0.2rem;
+    font-size: 3rem;
+    color: var(--teal);
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+  }
+  .testimonial-author {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--teal);
+    letter-spacing: 0.05em;
+  }
+  .testimonial-role {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+  .testimonial-stars {
+    color: var(--gold);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+  }
+
+
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -686,29 +771,35 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">Available for New Opportunities</div>
-    <h1>Segun<br><span>Olukayode</span></h1>
-    <p class="hero-sub">CAD Annotation Specialist · AI Training Data · Data Analyst</p>
-    <p class="hero-desc">
-      Detail-oriented data professional with hands-on experience in CAD modelling, AI training data preparation, and operational reporting. I bring precision and consistency to every technical task.
-    </p>
-    <div class="hero-actions">
-      <a href="mailto:pallyleke@gmail.com" class="btn-primary">✉ Get in Touch</a>
-      <a href="#experience" class="btn-outline">View Experience</a>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Available for New Opportunities</div>
+      <h1>Segun<br><span>Olukayode</span></h1>
+      <p class="hero-sub">CAD Annotation Specialist · AI Training Data · Data Analyst</p>
+      <p class="hero-desc">
+        Detail-oriented data professional with hands-on experience in CAD modelling, AI training data preparation, and operational reporting. I bring precision and consistency to every technical task.
+      </p>
+      <div class="hero-actions">
+        <a href="mailto:pallyleke@gmail.com" class="btn-primary">✉ Get in Touch</a>
+        <a href="#projects" class="btn-outline">View Projects</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <span class="stat-num">8+</span>
+          <span class="stat-label">CAD Tools Proficient</span>
+        </div>
+        <div>
+          <span class="stat-num">MSc</span>
+          <span class="stat-label">Supply Chain, Hull</span>
+        </div>
+        <div>
+          <span class="stat-num">C2</span>
+          <span class="stat-label">English Proficiency</span>
+        </div>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div>
-        <span class="stat-num">8+</span>
-        <span class="stat-label">CAD Tools Proficient</span>
-      </div>
-      <div>
-        <span class="stat-num">MSc</span>
-        <span class="stat-label">Supply Chain, Hull</span>
-      </div>
-      <div>
-        <span class="stat-num">C2</span>
-        <span class="stat-label">English Proficiency</span>
-      </div>
+    <div class="hero-photo">
+      <div class="hero-photo-placeholder">👤</div>
+      <div class="hero-photo-label">ADD PHOTO</div>
     </div>
   </div>
 </section>
@@ -754,6 +845,18 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section id="testimonial">
+  <div class="testimonial-inner">
+    <div class="testimonial-stars">★★★★★</div>
+    <p class="testimonial-quote">
+      Segun consistently delivered accurate, well-structured annotation work. His attention to labelling detail and understanding of CAD geometry was immediately apparent — he flagged edge cases other annotators missed entirely.
+    </p>
+    <div class="testimonial-author">Former Project Lead</div>
+    <div class="testimonial-role">AI Training Data Project · Remote Collaboration</div>
   </div>
 </section>
 
