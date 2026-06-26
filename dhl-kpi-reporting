@@ -1,0 +1,30 @@
+# Operational KPI Reporting — IBM Cognos Analytics (DHL)
+
+Data reporting and validation work from high-volume logistics operations at DHL.
+
+## Overview
+During my time at DHL Manchester (2023–2025), I built and maintained operational reports using IBM Cognos Analytics. Reports tracked shift throughput, data accuracy rates, and workflow efficiency across a high-volume logistics environment.
+
+## Tools Used
+- IBM Cognos Analytics 11
+- Data validation workflows
+- Excel (supporting analysis)
+
+## Report Types Produced
+| Report | Frequency | Key Metric |
+|--------|-----------|------------|
+| Shift Throughput | Daily | Units processed per shift |
+| Accuracy Rate | Weekly | Data entry error rate |
+| Workflow Efficiency | Weekly | Process bottleneck analysis |
+| Discrepancy Log | Ad hoc | Flagged data anomalies |
+
+## Key Outcomes
+- Maintained **98.4% data accuracy** across reporting periods
+- Identified recurring workflow bottlenecks leading to process improvements
+- Standardised report templates adopted across the team
+
+## Status
+✅ Completed — DHL Manchester (Sep 2023 – Jan 2025)
+
+---
+*Part of Segun Olukayode's Portfolio · [View Portfolio](https://pallyleke-dev.github.io/SEGUN-OLUKAYODE-dev/)*
