@@ -1,0 +1,33 @@
+# Inventory Discrepancy Reporting — RGIS
+
+Structured inventory audit and variance reporting across client sites.
+
+## Overview
+At RGIS Manchester (2022–2023), I executed precision inventory audits for retail and warehouse clients. This repository documents the audit methodology, discrepancy reporting structure, and data integrity workflows applied across multiple client engagements.
+
+## Tools Used
+- RGIS proprietary audit systems
+- Excel (variance reporting)
+- Manual count verification
+
+## Audit Workflow
+```
+1. Pre-audit setup     → Download expected counts
+2. Physical count      → Scan & record actual stock
+3. Variance detection  → Flag SKUs with discrepancy
+4. Root cause review   → Identify source of variance
+5. Resolution report   → Submit findings to client
+```
+
+## Sample Variance Report Structure
+| SKU | Expected | Actual | Variance | Status |
+|-----|----------|--------|----------|--------|
+| A-1042 | 260 | 248 | -12 | Flagged |
+| B-2201 | 503 | 503 | 0 | Clear |
+| C-0087 | 180 | 174 | -6 | Flagged |
+
+## Status
+✅ Completed — RGIS Manchester (Dec 2022 – Aug 2023)
+
+---
+*Part of Segun Olukayode's Portfolio · [View Portfolio](https://pallyleke-dev.github.io/SEGUN-OLUKAYODE-dev/)*
