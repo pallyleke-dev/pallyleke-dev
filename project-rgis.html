@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Stock variance and discrepancy reporting from precision inventory audits at RGIS Manchester.">
+<meta property="og:title" content="RGIS Inventory Audit — Segun Olukayode">
+<meta property="og:description" content="Stock variance and discrepancy reporting from precision inventory audits at RGIS Manchester.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a1628'/><text y='.9em' font-size='80' x='10'>S</text></svg>">
+<title>RGIS Inventory Audit — Segun Olukayode</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a1628;--teal:#1e8f82;--teal-light:#2ec4b6;--gold:#f4a261;--cream:#f4f6f9;--text:#0f172a;--muted:#64748b;--white:#fff;--border:#e2e8f0;}
+html{scroll-behavior:smooth;} *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;}
+nav{background:var(--navy);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+.nav-logo{color:#f4a261;font-family:'Playfair Display',serif;font-size:1rem;}
+.nav-back{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.83rem;}
+.hero{background:linear-gradient(135deg,#0d2a1f,#0a1628);padding:80px 5% 60px;}
+.hero-inner{max-width:860px;margin:0 auto;}
+.hero-cat{display:inline-flex;background:rgba(46,196,182,0.1);border:1px solid rgba(46,196,182,0.3);border-radius:100px;padding:0.3rem 0.9rem;color:var(--teal-light);font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.2rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);color:#fff;line-height:1.15;margin-bottom:1rem;}
+.hero h1 span{color:var(--gold);}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;}
+.meta-item{font-size:0.8rem;color:rgba(255,255,255,0.55);}
+.meta-item strong{color:var(--teal-light);display:block;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.2rem;}
+.content{max-width:860px;margin:0 auto;padding:60px 5%;}
+.section{margin-bottom:3.5rem;}
+.section h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:2px solid var(--teal-light);}
+.section p{color:#374151;font-size:0.97rem;line-height:1.85;margin-bottom:1rem;}
+.visual-block{background:var(--navy);border-radius:12px;padding:2rem;margin:1.5rem 0;}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:1.5rem 0;}
+.step-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.4rem;}
+.step-num{font-size:0.7rem;font-weight:700;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+.step-title{font-weight:700;font-size:0.9rem;color:var(--navy);margin-bottom:0.4rem;}
+.step-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+.outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;}
+.outcome-card{background:var(--navy);border-radius:10px;padding:1.4rem;text-align:center;}
+.outcome-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);display:block;}
+.outcome-label{font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;}
+.tag-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1rem 0;}
+.tag{background:rgba(30,143,130,0.08);border:1px solid rgba(30,143,130,0.2);color:var(--teal);padding:0.25rem 0.7rem;border-radius:100px;font-size:0.75rem;font-weight:500;}
+.back-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--teal);color:#fff;padding:0.75rem 1.6rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.88rem;margin-top:2rem;}
+</style>
+</head>
+<body>
+<nav><span class="nav-logo">S. Olukayode</span><a href="index.html" class="nav-back" >← Back to Portfolio</a></nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-cat">Inventory Audit · Data Integrity · RGIS Manchester</div>
+    <h1>Stock Variance &<br><span>Discrepancy Reporting</span></h1>
+    <div class="hero-meta">
+      <div class="meta-item"><strong>Employer</strong>RGIS — Manchester, UK</div>
+      <div class="meta-item"><strong>Period</strong>Dec 2022 – Aug 2023</div>
+      <div class="meta-item"><strong>Role</strong>Inventory Specialist</div>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="section">
+    <h2>The Context</h2>
+    <p>RGIS is one of the world's largest inventory counting companies — clients include major retailers, warehouses, and distribution centres. When RGIS sends a team to count your stock, the numbers they come back with have to be exact. There is no margin for error because those numbers feed directly into purchasing decisions, financial reports, and loss prevention systems.</p>
+    <p>As an Inventory Specialist, I was deployed to client sites across Manchester — retail stores, stockrooms, and warehouses — to conduct physical stock counts. My job wasn't just to count accurately; it was to identify where the numbers didn't add up and produce reports that explained why.</p>
+  </div>
+  <div class="section">
+    <h2>The Process</h2>
+    <div class="step-grid">
+      <div class="step-card"><div class="step-num">Step 01</div><div class="step-title">Pre-Audit Preparation</div><div class="step-desc">Before each deployment, expected stock counts were downloaded from the client's system. Audit zones were mapped and counting assignments distributed to ensure full site coverage.</div></div>
+      <div class="step-card"><div class="step-num">Step 02</div><div class="step-title">Physical Count Execution</div><div class="step-desc">Stock was counted systematically — aisle by aisle, shelf by shelf — using RGIS scanning equipment. Every SKU was scanned and actual quantities logged against the expected baseline.</div></div>
+      <div class="step-card"><div class="step-num">Step 03</div><div class="step-title">Variance Detection</div><div class="step-desc">On completion, actual counts were compared against expected values. SKUs with variance beyond tolerance thresholds were automatically flagged for secondary review.</div></div>
+      <div class="step-card"><div class="step-num">Step 04</div><div class="step-title">Root Cause Analysis</div><div class="step-desc">Flagged discrepancies were investigated on-site — checking for miscounts, misplaced stock, damaged items, or system data errors — and the root cause documented for each.</div></div>
+      <div class="step-card"><div class="step-num">Step 05</div><div class="step-title">Discrepancy Report</div><div class="step-desc">A structured discrepancy report was produced for each client — listing flagged SKUs, variance quantities, root cause findings, and recommended corrective actions.</div></div>
+      <div class="step-card"><div class="step-num">Step 06</div><div class="step-title">Data Integrity Sign-off</div><div class="step-desc">Final counts were validated, reports signed off, and data submitted to the client system. Any post-submission queries were resolved with full audit trail documentation.</div></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Audit Report Visual</h2>
+    <div class="visual-block">
+      <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <rect width="700" height="280" fill="#071a10" rx="8"/>
+        <text x="350" y="22" font-size="10" fill="rgba(255,255,255,0.25)" font-family="monospace" text-anchor="middle">RGIS INVENTORY AUDIT — DISCREPANCY REPORT</text>
+        <line x1="30" y1="32" x2="670" y2="32" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <!-- Table header -->
+        <rect x="30" y="45" width="640" height="22" rx="2" fill="rgba(46,196,182,0.12)"/>
+        <text x="50" y="60" font-size="8.5" fill="#2ec4b6" font-family="monospace" font-weight="bold">SKU ID</text>
+        <text x="160" y="60" font-size="8.5" fill="#2ec4b6" font-family="monospace" font-weight="bold">DESCRIPTION</text>
+        <text x="330" y="60" font-size="8.5" fill="#2ec4b6" font-family="monospace" font-weight="bold">EXPECTED</text>
+        <text x="420" y="60" font-size="8.5" fill="#2ec4b6" font-family="monospace" font-weight="bold">ACTUAL</text>
+        <text x="500" y="60" font-size="8.5" fill="#2ec4b6" font-family="monospace" font-weight="bold">VARIANCE</text>
+        <text x="590" y="60" font-size="8.5" fill="#2ec4b6" font-family="monospace" font-weight="bold">STATUS</text>
+        <!-- Row 1 flagged -->
+        <rect x="30" y="67" width="640" height="22" fill="rgba(244,162,97,0.06)"/>
+        <text x="50" y="82" font-size="8" fill="rgba(255,255,255,0.7)" font-family="monospace">A-1042</text>
+        <text x="160" y="82" font-size="8" fill="rgba(255,255,255,0.6)" font-family="monospace">Bracket Assembly</text>
+        <text x="330" y="82" font-size="8" fill="rgba(255,255,255,0.6)" font-family="monospace">260</text>
+        <text x="420" y="82" font-size="8" fill="rgba(255,255,255,0.6)" font-family="monospace">248</text>
+        <text x="500" y="82" font-size="8" fill="#f4a261" font-family="monospace">-12</text>
+        <text x="590" y="82" font-size="8" fill="#f4a261" font-family="monospace">⚠ FLAGGED</text>
+        <!-- Row 2 clear -->
+        <rect x="30" y="89" width="640" height="22" fill="rgba(255,255,255,0.01)"/>
+        <text x="50" y="104" font-size="8" fill="rgba(255,255,255,0.7)" font-family="monospace">B-2201</text>
+        <text x="160" y="104" font-size="8" fill="rgba(255,255,255,0.6)" font-family="monospace">Packing Unit</text>
+        <text x="330" y="104" font-size="8" fill="rgba(255,255,255,0.6)" font-family="monospace">503</text>
+        <text x="420" y="104" font-size="8" fill="rgba(255,255,255,0.6)" font-family="monospace">503</text>
+        <text x="500" y="104" font-size="8" fill="#2ec4b6" font-family="monospace">0</text>
+        <text x="590" y="104" font-size="8" fill="#2ec4b6" font-family="monospace">✓ CLEAR</text>
+        <!-- Row 3 flagged -->
+        <rect x="30" y="111" width="640" height="22" fill="rgba(244,162,97,0.06)"/>
+        <text x="50" y="126" font-size="8" fill="rgba(255,255,255,0.7)" font-family="monospace">C-0087</text>
+        <text x="160" y="126" font-size="8" fill="rgba(255,255,255,0.6)" font-family="monospace">Cable Reel</text>
+        <text x="330" y="126" font-size="8" fill="rgba(255,255,255,0.6)" font-family="monospace">180</text>
+        <text x="420" y="126" font-size="8" fill="rgba(255,255,255,0.6)" font-family="monospace">174</text>
+        <text x="500" y="126" font-size="8" fill="#f4a261" font-family="monospace">-6</text>
+        <text x="590" y="126" font-size="8" fill="#f4a261" font-family="monospace">⚠ FLAGGED</text>
+        <!-- Row 4 clear -->
+        <rect x="30" y="133" width="640" height="22" fill="rgba(255,255,255,0.01)"/>
+        <text x="50" y="148" font-size="8" fill="rgba(255,255,255,0.7)" font-family="monospace">D-3310</text>
+        <text x="160" y="148" font-size="8" fill="rgba(255,255,255,0.6)" font-family="monospace">Storage Bin</text>
+        <text x="330" y="148" font-size="8" fill="rgba(255,255,255,0.6)" font-family="monospace">420</text>
+        <text x="420" y="148" font-size="8" fill="rgba(255,255,255,0.6)" font-family="monospace">420</text>
+        <text x="500" y="148" font-size="8" fill="#2ec4b6" font-family="monospace">0</text>
+        <text x="590" y="148" font-size="8" fill="#2ec4b6" font-family="monospace">✓ CLEAR</text>
+        <!-- Summary -->
+        <rect x="30" y="180" width="640" height="75" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <text x="50" y="198" font-size="8" fill="rgba(255,255,255,0.3)" font-family="monospace">ROOT CAUSE FINDINGS</text>
+        <text x="50" y="215" font-size="8" fill="#f4a261" font-family="monospace">A-1042:</text>
+        <text x="100" y="215" font-size="8" fill="rgba(255,255,255,0.55)" font-family="monospace">12 units located in overflow bay — not counted in primary zone. Corrected.</text>
+        <text x="50" y="230" font-size="8" fill="#f4a261" font-family="monospace">C-0087:</text>
+        <text x="100" y="230" font-size="8" fill="rgba(255,255,255,0.55)" font-family="monospace">6 units found damaged, removed to quarantine. Variance explained.</text>
+        <text x="50" y="247" font-size="8" fill="#2ec4b6" font-family="monospace">Final data integrity confirmed. Report submitted to client.</text>
+      </svg>
+    </div>
+  </div>
+  <div class="section">
+    <h2>What Made This Work</h2>
+    <p><strong>Systematic counting discipline.</strong> The temptation in high-volume environments is to move fast. But speed without accuracy is worthless in audit work. I developed a zone-by-zone counting discipline that prioritised completeness over pace — ensuring nothing was skipped, even in cluttered or poorly organised stockrooms.</p>
+    <p><strong>Root cause thinking.</strong> A variance is just a number until you explain it. I treated every flagged discrepancy as a puzzle — was it a miscount, a system error, misplaced stock, or genuine loss? Each had a different resolution path and the report needed to reflect that distinction clearly.</p>
+    <p><strong>Client communication.</strong> Discrepancy reports went directly to clients. The language had to be clear, the findings unambiguous, and the recommendations actionable. This was professional documentation under real commercial stakes.</p>
+  </div>
+  <div class="section">
+    <h2>Outcomes</h2>
+    <div class="outcome-grid">
+      <div class="outcome-card"><span class="outcome-num">99%+</span><span class="outcome-label">Count Accuracy</span></div>
+      <div class="outcome-card"><span class="outcome-num">100%</span><span class="outcome-label">Reports Delivered On Time</span></div>
+      <div class="outcome-card"><span class="outcome-num">9mo</span><span class="outcome-label">Deployment Period</span></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag">Inventory Auditing</span><span class="tag">Variance Analysis</span><span class="tag">Data Integrity</span><span class="tag">Root Cause Analysis</span><span class="tag">Client Reporting</span>
+    </div>
+  </div>
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="3D surface and mesh model annotation using Rhino 3D and SolveSpace for AI shape recognition training.">
+<meta property="og:title" content="Rhino 3D Mesh Annotation — Segun Olukayode">
+<meta property="og:description" content="3D surface and mesh model annotation using Rhino 3D and SolveSpace for AI shape recognition training.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a1628'/><text y='.9em' font-size='80' x='10'>S</text></svg>">
+<title>Rhino 3D Mesh Annotation — Segun Olukayode</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a1628;--teal:#1e8f82;--teal-light:#2ec4b6;--gold:#f4a261;--cream:#f4f6f9;--text:#0f172a;--muted:#64748b;--white:#fff;--border:#e2e8f0;}
+html{scroll-behavior:smooth;} *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;}
+nav{background:var(--navy);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+.nav-logo{color:#f4a261;font-family:'Playfair Display',serif;font-size:1rem;}
+.nav-back{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.83rem;}
+.hero{background:linear-gradient(135deg,#1a0e28,#0a1628);padding:80px 5% 60px;}
+.hero-inner{max-width:860px;margin:0 auto;}
+.hero-cat{display:inline-flex;background:rgba(155,93,229,0.1);border:1px solid rgba(155,93,229,0.3);border-radius:100px;padding:0.3rem 0.9rem;color:#9b5de5;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.2rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);color:#fff;line-height:1.15;margin-bottom:1rem;}
+.hero h1 span{color:var(--gold);}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;}
+.meta-item{font-size:0.8rem;color:rgba(255,255,255,0.55);}
+.meta-item strong{color:#9b5de5;display:block;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.2rem;}
+.content{max-width:860px;margin:0 auto;padding:60px 5%;}
+.section{margin-bottom:3.5rem;}
+.section h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:2px solid #9b5de5;}
+.section p{color:#374151;font-size:0.97rem;line-height:1.85;margin-bottom:1rem;}
+.visual-block{background:#100820;border-radius:12px;padding:2rem;margin:1.5rem 0;}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:1.5rem 0;}
+.step-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.4rem;}
+.step-num{font-size:0.7rem;font-weight:700;color:#9b5de5;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+.step-title{font-weight:700;font-size:0.9rem;color:var(--navy);margin-bottom:0.4rem;}
+.step-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+.outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;}
+.outcome-card{background:var(--navy);border-radius:10px;padding:1.4rem;text-align:center;}
+.outcome-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);display:block;}
+.outcome-label{font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;}
+.tag-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1rem 0;}
+.tag{background:rgba(155,93,229,0.08);border:1px solid rgba(155,93,229,0.2);color:#9b5de5;padding:0.25rem 0.7rem;border-radius:100px;font-size:0.75rem;font-weight:500;}
+.back-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--teal);color:#fff;padding:0.75rem 1.6rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.88rem;margin-top:2rem;}
+</style>
+</head>
+<body>
+<nav><span class="nav-logo">S. Olukayode</span><a href="index.html" class="nav-back" >← Back to Portfolio</a></nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-cat">Rhino 3D · SolveSpace · Mesh Annotation</div>
+    <h1>3D Surface & Mesh<br><span>Model Annotation</span></h1>
+    <div class="hero-meta">
+      <div class="meta-item"><strong>Tools</strong>Rhino 3D · SolveSpace</div>
+      <div class="meta-item"><strong>Type</strong>Mesh & Surface Annotation</div>
+      <div class="meta-item"><strong>Output</strong>Shape Recognition Training Data</div>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="section">
+    <h2>The Brief</h2>
+    <p>Where FreeCAD deals in mechanical assemblies and BlenderBIM handles buildings, Rhino 3D lives in a different territory — complex freeform surfaces, industrial design, and precision mesh geometry. Annotating this class of model required a different mindset entirely.</p>
+    <p>The task was to annotate 3D surface models and parametric constraint geometries so that AI systems could learn to identify geometric primitives — vertices, edges, faces, curves — from raw 3D data. The models ranged from organic freeform shapes to highly constrained mechanical profiles built in SolveSpace.</p>
+  </div>
+  <div class="section">
+    <h2>The Process</h2>
+    <div class="step-grid">
+      <div class="step-card"><div class="step-num">Step 01</div><div class="step-title">Model Analysis</div><div class="step-desc">Each model was analysed to understand its topology — how many faces, the curvature profile, key vertices, and constraint relationships in SolveSpace models.</div></div>
+      <div class="step-card"><div class="step-num">Step 02</div><div class="step-title">Vertex Identification</div><div class="step-desc">Key vertices — apex points, base vertices, inflection points, and junction nodes — were identified and labelled with their spatial coordinates and geometric role.</div></div>
+      <div class="step-card"><div class="step-num">Step 03</div><div class="step-title">Edge Classification</div><div class="step-desc">Each edge was classified by type — sharp crease, soft blend, silhouette, or boundary — and tagged with its parent surface and connecting vertices.</div></div>
+      <div class="step-card"><div class="step-num">Step 04</div><div class="step-title">Face Labelling</div><div class="step-desc">Surface patches and mesh faces were labelled by geometry type — planar, cylindrical, conical, toroidal, or freeform NURBS — and linked to their bounding edge loops.</div></div>
+      <div class="step-card"><div class="step-num">Step 05</div><div class="step-title">Constraint Annotation (SolveSpace)</div><div class="step-desc">In SolveSpace models, parametric constraints — distances, angles, coincident points, parallel edges — were extracted and documented as part of the annotation manifest.</div></div>
+      <div class="step-card"><div class="step-num">Step 06</div><div class="step-title">Export & QA</div><div class="step-desc">Annotated models were exported with full label manifests. Geometric consistency checks verified that all vertex coordinates and face normals were correctly documented.</div></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Visual Walkthrough</h2>
+    <div class="visual-block">
+      <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <rect width="700" height="300" fill="#0a0415" rx="8"/>
+        <!-- Wireframe mesh -->
+        <polygon points="350,40 180,220 520,220" fill="rgba(155,93,229,0.08)" stroke="#9b5de5" stroke-width="2"/>
+        <polygon points="350,40 520,220 580,130" fill="rgba(46,196,182,0.06)" stroke="#2ec4b6" stroke-width="1.5"/>
+        <polygon points="350,40 180,220 120,130" fill="rgba(46,196,182,0.06)" stroke="#2ec4b6" stroke-width="1.5"/>
+        <!-- Internal mesh lines -->
+        <line x1="350" y1="40" x2="350" y2="220" stroke="rgba(155,93,229,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="265" y1="130" x2="435" y2="130" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="3,3"/>
+        <!-- Vertex labels -->
+        <circle cx="350" cy="40" r="7" fill="#f4a261" opacity="0.9"/>
+        <rect x="362" y="28" width="100" height="18" rx="3" fill="rgba(244,162,97,0.15)" stroke="rgba(244,162,97,0.4)" stroke-width="0.8"/>
+        <text x="412" y="40" font-size="8.5" fill="#f4a261" font-family="monospace" text-anchor="middle">VERTEX_TOP</text>
+        <circle cx="180" cy="220" r="6" fill="#2ec4b6" opacity="0.9"/>
+        <rect x="90" y="228" width="86" height="16" rx="3" fill="rgba(46,196,182,0.12)" stroke="rgba(46,196,182,0.4)" stroke-width="0.8"/>
+        <text x="133" y="239" font-size="8" fill="#2ec4b6" font-family="monospace" text-anchor="middle">VERTEX_L</text>
+        <circle cx="520" cy="220" r="6" fill="#2ec4b6" opacity="0.9"/>
+        <rect x="530" y="228" width="86" height="16" rx="3" fill="rgba(46,196,182,0.12)" stroke="rgba(46,196,182,0.4)" stroke-width="0.8"/>
+        <text x="573" y="239" font-size="8" fill="#2ec4b6" font-family="monospace" text-anchor="middle">VERTEX_R</text>
+        <!-- Edge label -->
+        <text x="220" y="145" font-size="8" fill="rgba(155,93,229,0.8)" font-family="monospace">EDGE_L · silhouette</text>
+        <text x="430" y="145" font-size="8" fill="rgba(155,93,229,0.8)" font-family="monospace">EDGE_R · silhouette</text>
+        <!-- Face label -->
+        <text x="350" y="175" font-size="9" fill="rgba(255,255,255,0.3)" font-family="monospace" text-anchor="middle">FACE_A · freeform NURBS</text>
+        <!-- Legend -->
+        <text x="350" y="15" font-size="9" fill="rgba(255,255,255,0.2)" font-family="monospace" text-anchor="middle">Rhino 3D — Mesh Annotation Map</text>
+      </svg>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Challenges & Solutions</h2>
+    <p><strong>Freeform topology.</strong> Unlike mechanical CAD where every edge has a clear engineering purpose, freeform Rhino surfaces can have thousands of control points and no obvious semantic structure. Developing a consistent labelling vocabulary for organic geometry required building a custom annotation guide specific to this model class.</p>
+    <p><strong>SolveSpace constraint extraction.</strong> SolveSpace stores constraints as abstract mathematical relationships — not as visible geometry. Extracting and documenting these constraints in a human-readable annotation format required parsing the .slvs file format directly.</p>
+  </div>
+  <div class="section">
+    <h2>Outcomes</h2>
+    <div class="outcome-grid">
+      <div class="outcome-card"><span class="outcome-num">4</span><span class="outcome-label">Geometric Element Types</span></div>
+      <div class="outcome-card"><span class="outcome-num">2</span><span class="outcome-label">CAD Platforms</span></div>
+      <div class="outcome-card"><span class="outcome-num">100%</span><span class="outcome-label">Schema Consistency</span></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag">Rhino 3D</span><span class="tag">SolveSpace</span><span class="tag">NURBS Surfaces</span><span class="tag">Mesh Topology</span><span class="tag">Vertex Labelling</span>
+    </div>
+  </div>
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+</div>
+</body>
+</html>

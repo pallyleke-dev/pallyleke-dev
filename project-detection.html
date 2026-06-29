@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bounding box dataset preparation for object detection AI models with confidence scoring and QA review.">
+<meta property="og:title" content="Object Detection Bounding Box Annotation — Segun Olukayode">
+<meta property="og:description" content="Bounding box dataset preparation for object detection AI models with confidence scoring and QA review.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a1628'/><text y='.9em' font-size='80' x='10'>S</text></svg>">
+<title>Object Detection Annotation — Segun Olukayode</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a1628;--teal:#1e8f82;--teal-light:#2ec4b6;--gold:#f4a261;--cream:#f4f6f9;--text:#0f172a;--muted:#64748b;--white:#fff;--border:#e2e8f0;}
+html{scroll-behavior:smooth;} *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;}
+nav{background:var(--navy);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+.nav-logo{color:#f4a261;font-family:'Playfair Display',serif;font-size:1rem;}
+.nav-back{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.83rem;}
+.hero{background:linear-gradient(135deg,#0a2020,#0a1628);padding:80px 5% 60px;}
+.hero-inner{max-width:860px;margin:0 auto;}
+.hero-cat{display:inline-flex;background:rgba(46,196,182,0.1);border:1px solid rgba(46,196,182,0.3);border-radius:100px;padding:0.3rem 0.9rem;color:var(--teal-light);font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.2rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);color:#fff;line-height:1.15;margin-bottom:1rem;}
+.hero h1 span{color:var(--gold);}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;}
+.meta-item{font-size:0.8rem;color:rgba(255,255,255,0.55);}
+.meta-item strong{color:var(--teal-light);display:block;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.2rem;}
+.content{max-width:860px;margin:0 auto;padding:60px 5%;}
+.section{margin-bottom:3.5rem;}
+.section h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:2px solid var(--teal-light);}
+.section p{color:#374151;font-size:0.97rem;line-height:1.85;margin-bottom:1rem;}
+.visual-block{background:#061818;border-radius:12px;padding:2rem;margin:1.5rem 0;}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:1.5rem 0;}
+.step-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.4rem;}
+.step-num{font-size:0.7rem;font-weight:700;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+.step-title{font-weight:700;font-size:0.9rem;color:var(--navy);margin-bottom:0.4rem;}
+.step-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+.outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;}
+.outcome-card{background:var(--navy);border-radius:10px;padding:1.4rem;text-align:center;}
+.outcome-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);display:block;}
+.outcome-label{font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;}
+.tag-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1rem 0;}
+.tag{background:rgba(30,143,130,0.08);border:1px solid rgba(30,143,130,0.2);color:var(--teal);padding:0.25rem 0.7rem;border-radius:100px;font-size:0.75rem;font-weight:500;}
+.back-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--teal);color:#fff;padding:0.75rem 1.6rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.88rem;margin-top:2rem;}
+.code-block{background:#0a1628;border-radius:8px;padding:1.2rem 1.5rem;font-family:monospace;font-size:0.82rem;color:#2ec4b6;line-height:1.8;margin:1rem 0;overflow-x:auto;}
+</style>
+</head>
+<body>
+<nav><span class="nav-logo">S. Olukayode</span><a href="index.html" class="nav-back" >← Back to Portfolio</a></nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-cat">AI Annotation · Bounding Box · Object Detection</div>
+    <h1>Bounding Box<br><span>Dataset Preparation</span></h1>
+    <div class="hero-meta">
+      <div class="meta-item"><strong>Type</strong>Object Detection Annotation</div>
+      <div class="meta-item"><strong>Format</strong>Bounding Box + Class Labels</div>
+      <div class="meta-item"><strong>Output</strong>AI Training Dataset</div>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="section">
+    <h2>The Brief</h2>
+    <p>Object detection is one of the foundational tasks in computer vision — the ability for an AI to look at an image and identify what's in it, where it is, and what class it belongs to. But before any model can do that, a human has to teach it. That teaching happens through annotation.</p>
+    <p>This project involved preparing large-scale bounding box annotation datasets for object detection models. The images contained industrial components, mechanical parts, and assembly elements — objects the model needed to learn to detect and classify reliably. Every annotation had to be precise: a box even slightly too large or too small changes what the model learns.</p>
+  </div>
+  <div class="section">
+    <h2>The Process</h2>
+    <div class="step-grid">
+      <div class="step-card"><div class="step-num">Step 01</div><div class="step-title">Image Batch Review</div><div class="step-desc">Each image batch was reviewed before annotation — checking image quality, lighting consistency, and object visibility. Blurred or unusable images were flagged and removed from the batch.</div></div>
+      <div class="step-card"><div class="step-num">Step 02</div><div class="step-title">Class Schema Setup</div><div class="step-desc">The class taxonomy was defined per project — what object types to detect, how to handle overlapping objects, and what minimum confidence threshold to apply when an object was partially visible.</div></div>
+      <div class="step-card"><div class="step-num">Step 03</div><div class="step-title">Bounding Box Drawing</div><div class="step-desc">For each object in each image, a tight bounding box was drawn — as close to the object boundary as possible without clipping. Box coordinates were recorded in [x, y, width, height] format.</div></div>
+      <div class="step-card"><div class="step-num">Step 04</div><div class="step-title">Class Label Assignment</div><div class="step-desc">Each box was assigned its class label from the taxonomy. Objects with ambiguous class membership were flagged for review rather than guessed — accuracy over speed.</div></div>
+      <div class="step-card"><div class="step-num">Step 05</div><div class="step-title">Confidence Scoring</div><div class="step-desc">A confidence score was assigned to each annotation — reflecting how clearly visible and unambiguously classifiable the object was. Low-confidence annotations were reviewed by a second pass.</div></div>
+      <div class="step-card"><div class="step-num">Step 06</div><div class="step-title">QA & Dataset Export</div><div class="step-desc">The complete annotated dataset was reviewed — checking for missed objects, incorrect boxes, and class inconsistencies — before export in the required format for model training.</div></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Annotation Format</h2>
+    <div class="code-block">
+{
+  "image_id": "frame_0042",
+  "width": 1920,
+  "height": 1080,
+  "annotations": [
+    {
+      "id": 1,
+      "label": "PART_A",
+      "confidence": 0.94,
+      "bbox": [40, 38, 70, 55],
+      "format": "[x, y, width, height]",
+      "occluded": false
+    },
+    {
+      "id": 2,
+      "label": "PART_B",
+      "confidence": 0.87,
+      "bbox": [140, 50, 80, 65],
+      "occluded": true,
+      "occlusion_pct": 15
+    }
+  ]
+}
+    </div>
+  </div>
+  <div class="section">
+    <h2>Visual Walkthrough</h2>
+    <div class="visual-block">
+      <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <rect width="700" height="300" fill="#040e0e" rx="8"/>
+        <text x="350" y="20" font-size="9" fill="rgba(255,255,255,0.2)" font-family="monospace" text-anchor="middle">frame_0042.jpg — Annotated</text>
+        <!-- Image frame -->
+        <rect x="30" y="30" width="640" height="240" rx="4" fill="#081818" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <!-- Object 1 bounding box -->
+        <rect x="60" y="55" width="160" height="130" rx="1" fill="none" stroke="#f4a261" stroke-width="2.5"/>
+        <!-- Corner markers PART_A -->
+        <line x1="60" y1="65" x2="60" y2="55" stroke="#f4a261" stroke-width="2.5"/><line x1="60" y1="55" x2="70" y2="55" stroke="#f4a261" stroke-width="2.5"/>
+        <line x1="210" y1="55" x2="220" y2="55" stroke="#f4a261" stroke-width="2.5"/><line x1="220" y1="55" x2="220" y2="65" stroke="#f4a261" stroke-width="2.5"/>
+        <line x1="60" y1="175" x2="60" y2="185" stroke="#f4a261" stroke-width="2.5"/><line x1="60" y1="185" x2="70" y2="185" stroke="#f4a261" stroke-width="2.5"/>
+        <line x1="210" y1="185" x2="220" y2="185" stroke="#f4a261" stroke-width="2.5"/><line x1="220" y1="175" x2="220" y2="185" stroke="#f4a261" stroke-width="2.5"/>
+        <rect x="60" y="42" width="105" height="16" rx="2" fill="#f4a261"/>
+        <text x="113" y="54" font-size="8.5" fill="#000" font-family="monospace" font-weight="bold" text-anchor="middle">PART_A · 94%</text>
+        <!-- Object 2 bounding box -->
+        <rect x="340" y="70" width="200" height="160" rx="1" fill="none" stroke="#2ec4b6" stroke-width="2.5"/>
+        <rect x="340" y="57" width="105" height="16" rx="2" fill="#2ec4b6"/>
+        <text x="393" y="69" font-size="8.5" fill="#000" font-family="monospace" font-weight="bold" text-anchor="middle">PART_B · 87%</text>
+        <!-- Corner markers PART_B -->
+        <line x1="340" y1="80" x2="340" y2="70" stroke="#2ec4b6" stroke-width="2.5"/><line x1="340" y1="70" x2="350" y2="70" stroke="#2ec4b6" stroke-width="2.5"/>
+        <line x1="530" y1="70" x2="540" y2="70" stroke="#2ec4b6" stroke-width="2.5"/><line x1="540" y1="70" x2="540" y2="80" stroke="#2ec4b6" stroke-width="2.5"/>
+        <!-- Occlusion badge -->
+        <rect x="450" y="215" width="85" height="14" rx="3" fill="rgba(244,162,97,0.2)" stroke="rgba(244,162,97,0.4)" stroke-width="0.8"/>
+        <text x="492" y="225" font-size="7" fill="#f4a261" font-family="monospace" text-anchor="middle">⚠ 15% occluded</text>
+        <!-- Stats bar -->
+        <rect x="30" y="275" width="640" height="18" rx="0 0 4 4" fill="rgba(46,196,182,0.05)"/>
+        <text x="50" y="287" font-size="7.5" fill="rgba(255,255,255,0.3)" font-family="monospace">Objects: 2 · Boxes: 2 · Classes: 2 · Confidence avg: 0.905</text>
+      </svg>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Challenges & Solutions</h2>
+    <p><strong>Occluded objects.</strong> Many images contained partially hidden objects — a component behind another, or cropped at the image edge. A clear occlusion policy was established: annotate if more than 50% of the object is visible, flag the occlusion percentage in the metadata.</p>
+    <p><strong>Class ambiguity.</strong> Some components looked similar enough that class assignment was genuinely uncertain. Rather than guessing, these were logged in an ambiguity register and resolved by reviewing the class definitions against the object geometry carefully before deciding.</p>
+    <p><strong>Box tightness consistency.</strong> Different annotators draw boxes differently — some too tight, some too loose. A calibration exercise established a shared standard, and random samples were reviewed across batches to maintain consistency.</p>
+  </div>
+  <div class="section">
+    <h2>Outcomes</h2>
+    <div class="outcome-grid">
+      <div class="outcome-card"><span class="outcome-num">94%</span><span class="outcome-label">Avg Confidence Score</span></div>
+      <div class="outcome-card"><span class="outcome-num">0</span><span class="outcome-label">Unresolved Ambiguities</span></div>
+      <div class="outcome-card"><span class="outcome-num">100%</span><span class="outcome-label">QA Pass Rate</span></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag">Bounding Box Annotation</span><span class="tag">Object Detection</span><span class="tag">Class Labelling</span><span class="tag">Confidence Scoring</span><span class="tag">QA Review</span>
+    </div>
+  </div>
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+</div>
+</body>
+</html>

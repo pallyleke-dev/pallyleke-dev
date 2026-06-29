@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Operational KPI dashboard reporting at DHL Manchester using IBM Cognos Analytics over 16 months.">
+<meta property="og:title" content="DHL KPI Reporting — IBM Cognos — Segun Olukayode">
+<meta property="og:description" content="Operational KPI dashboard reporting at DHL Manchester using IBM Cognos Analytics over 16 months.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a1628'/><text y='.9em' font-size='80' x='10'>S</text></svg>">
+<title>DHL KPI Reporting — Segun Olukayode</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a1628;--teal:#1e8f82;--teal-light:#2ec4b6;--gold:#f4a261;--cream:#f4f6f9;--text:#0f172a;--muted:#64748b;--white:#fff;--border:#e2e8f0;}
+html{scroll-behavior:smooth;} *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;}
+nav{background:var(--navy);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+.nav-logo{color:#f4a261;font-family:'Playfair Display',serif;font-size:1rem;}
+.nav-back{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.83rem;}
+.nav-back:hover{color:var(--teal-light);}
+.hero{background:linear-gradient(135deg,#0a1628,#0f243c);padding:80px 5% 60px;}
+.hero-inner{max-width:860px;margin:0 auto;}
+.hero-cat{display:inline-flex;background:rgba(46,196,182,0.1);border:1px solid rgba(46,196,182,0.3);border-radius:100px;padding:0.3rem 0.9rem;color:var(--teal-light);font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.2rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);color:#fff;line-height:1.15;margin-bottom:1rem;}
+.hero h1 span{color:var(--gold);}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;}
+.meta-item{font-size:0.8rem;color:rgba(255,255,255,0.55);}
+.meta-item strong{color:var(--teal-light);display:block;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.2rem;}
+.content{max-width:860px;margin:0 auto;padding:60px 5%;}
+.section{margin-bottom:3.5rem;}
+.section h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:2px solid var(--teal-light);}
+.section p{color:#374151;font-size:0.97rem;line-height:1.85;margin-bottom:1rem;}
+.visual-block{background:var(--navy);border-radius:12px;padding:2rem;margin:1.5rem 0;}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:1.5rem 0;}
+.step-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.4rem;}
+.step-num{font-size:0.7rem;font-weight:700;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+.step-title{font-weight:700;font-size:0.9rem;color:var(--navy);margin-bottom:0.4rem;}
+.step-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+.outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;}
+.outcome-card{background:var(--navy);border-radius:10px;padding:1.4rem;text-align:center;}
+.outcome-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);display:block;}
+.outcome-label{font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;}
+.tag-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1rem 0;}
+.tag{background:rgba(30,143,130,0.08);border:1px solid rgba(30,143,130,0.2);color:var(--teal);padding:0.25rem 0.7rem;border-radius:100px;font-size:0.75rem;font-weight:500;}
+.back-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--teal);color:#fff;padding:0.75rem 1.6rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.88rem;margin-top:2rem;}
+</style>
+</head>
+<body>
+<nav><span class="nav-logo">S. Olukayode</span><a href="index.html" class="nav-back" >← Back to Portfolio</a></nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-cat">Data Reporting · IBM Cognos · DHL Manchester</div>
+    <h1>Operational KPI<br><span>Dashboard Reporting</span></h1>
+    <div class="hero-meta">
+      <div class="meta-item"><strong>Employer</strong>DHL — Manchester, UK</div>
+      <div class="meta-item"><strong>Period</strong>Sep 2023 – Jan 2025</div>
+      <div class="meta-item"><strong>Tool</strong>IBM Cognos Analytics 11</div>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="section">
+    <h2>The Context</h2>
+    <p>DHL's Manchester operation ran around the clock — multiple shifts, thousands of parcels, dozens of data touchpoints per hour. In that kind of environment, bad data doesn't just look bad on a report. It causes missed collections, incorrect routing, client complaints, and real financial cost.</p>
+    <p>My role as an Associate placed me at the heart of that data flow. I wasn't just processing — I was responsible for generating the reports that shift managers and operations leads relied on to make decisions. Every number I put on a dashboard had to be right.</p>
+  </div>
+  <div class="section">
+    <h2>The Process</h2>
+    <div class="step-grid">
+      <div class="step-card"><div class="step-num">Step 01</div><div class="step-title">Data Source Connection</div><div class="step-desc">Connected IBM Cognos Analytics to the operational database, mapping data sources for parcel throughput, scan events, error logs, and shift productivity metrics.</div></div>
+      <div class="step-card"><div class="step-num">Step 02</div><div class="step-title">Report Framework Design</div><div class="step-desc">Designed a standardised report layout covering: daily throughput by shift, data accuracy rate, error type breakdown, and workflow bottleneck indicators.</div></div>
+      <div class="step-card"><div class="step-num">Step 03</div><div class="step-title">Data Validation Layer</div><div class="step-desc">Built validation checks into the reporting pipeline — flagging anomalous scan counts, duplicate entries, and timestamp mismatches before data reached the dashboard.</div></div>
+      <div class="step-card"><div class="step-num">Step 04</div><div class="step-title">Daily Report Generation</div><div class="step-desc">Reports were generated at shift end and distributed to operations leads. Each report included a narrative summary highlighting any flagged anomalies or performance trends.</div></div>
+      <div class="step-card"><div class="step-num">Step 05</div><div class="step-title">Weekly Trend Analysis</div><div class="step-desc">Weekly reports aggregated daily data to surface patterns — recurring error types, peak throughput periods, and shifts consistently below accuracy targets.</div></div>
+      <div class="step-card"><div class="step-num">Step 06</div><div class="step-title">Process Improvement Input</div><div class="step-desc">Reporting findings were fed into weekly ops review meetings. Data-backed observations led to process changes that measurably reduced recurring error types.</div></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Dashboard Visual</h2>
+    <div class="visual-block">
+      <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <rect width="700" height="300" fill="#071220" rx="8"/>
+        <text x="350" y="22" font-size="10" fill="rgba(255,255,255,0.25)" font-family="monospace" text-anchor="middle">DHL OPERATIONS — WEEKLY KPI DASHBOARD</text>
+        <line x1="30" y1="32" x2="670" y2="32" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <!-- KPI Cards -->
+        <rect x="30" y="45" width="145" height="60" rx="4" fill="rgba(46,196,182,0.08)" stroke="rgba(46,196,182,0.3)" stroke-width="1"/>
+        <text x="52" y="65" font-size="8" fill="rgba(255,255,255,0.45)" font-family="monospace">THROUGHPUT</text>
+        <text x="52" y="90" font-size="22" fill="#2ec4b6" font-family="'Playfair Display',serif">98.4%</text>
+        <rect x="185" y="45" width="145" height="60" rx="4" fill="rgba(244,162,97,0.08)" stroke="rgba(244,162,97,0.3)" stroke-width="1"/>
+        <text x="207" y="65" font-size="8" fill="rgba(255,255,255,0.45)" font-family="monospace">ACCURACY</text>
+        <text x="207" y="90" font-size="22" fill="#f4a261" font-family="'Playfair Display',serif">4,820</text>
+        <rect x="340" y="45" width="145" height="60" rx="4" fill="rgba(155,93,229,0.08)" stroke="rgba(155,93,229,0.3)" stroke-width="1"/>
+        <text x="362" y="65" font-size="8" fill="rgba(255,255,255,0.45)" font-family="monospace">ERRORS</text>
+        <text x="362" y="90" font-size="22" fill="#9b5de5" font-family="'Playfair Display',serif">76</text>
+        <rect x="495" y="45" width="175" height="60" rx="4" fill="rgba(46,196,182,0.05)" stroke="rgba(46,196,182,0.2)" stroke-width="1"/>
+        <text x="517" y="65" font-size="8" fill="rgba(255,255,255,0.45)" font-family="monospace">SHIFT RATING</text>
+        <text x="517" y="90" font-size="22" fill="#2ec4b6" font-family="'Playfair Display',serif">★★★★☆</text>
+        <!-- Bar chart -->
+        <rect x="30" y="125" width="400" height="145" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <text x="45" y="142" font-size="8" fill="rgba(255,255,255,0.3)" font-family="monospace">DAILY THROUGHPUT — MON TO FRI</text>
+        <rect x="55" y="210" width="40" height="45" rx="1" fill="rgba(46,196,182,0.5)"/>
+        <rect x="110" y="190" width="40" height="65" rx="1" fill="rgba(46,196,182,0.65)"/>
+        <rect x="165" y="175" width="40" height="80" rx="1" fill="rgba(46,196,182,0.8)"/>
+        <rect x="220" y="185" width="40" height="70" rx="1" fill="rgba(244,162,97,0.6)"/>
+        <rect x="275" y="165" width="40" height="90" rx="1" fill="rgba(46,196,182,0.9)"/>
+        <line x1="40" y1="255" x2="400" y2="255" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <text x="75" y="268" font-size="7" fill="rgba(255,255,255,0.3)" font-family="monospace" text-anchor="middle">MON</text>
+        <text x="130" y="268" font-size="7" fill="rgba(255,255,255,0.3)" font-family="monospace" text-anchor="middle">TUE</text>
+        <text x="185" y="268" font-size="7" fill="rgba(255,255,255,0.3)" font-family="monospace" text-anchor="middle">WED</text>
+        <text x="240" y="268" font-size="7" fill="rgba(255,255,255,0.3)" font-family="monospace" text-anchor="middle">THU</text>
+        <text x="295" y="268" font-size="7" fill="rgba(255,255,255,0.3)" font-family="monospace" text-anchor="middle">FRI</text>
+        <!-- Error log -->
+        <rect x="445" y="125" width="225" height="145" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <text x="460" y="142" font-size="8" fill="rgba(255,255,255,0.3)" font-family="monospace">FLAGGED ANOMALIES</text>
+        <text x="460" y="162" font-size="7.5" fill="#f4a261" font-family="monospace">⚠ Duplicate scan — WED 14:22</text>
+        <text x="460" y="178" font-size="7.5" fill="#f4a261" font-family="monospace">⚠ Missing timestamp — THU</text>
+        <text x="460" y="194" font-size="7.5" fill="#2ec4b6" font-family="monospace">✓ Resolved — reprocessed</text>
+        <text x="460" y="210" font-size="7.5" fill="#2ec4b6" font-family="monospace">✓ All shifts validated</text>
+      </svg>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Challenges & Solutions</h2>
+    <p><strong>Data latency.</strong> Scan data from the warehouse floor sometimes arrived late or out of sequence. The reporting pipeline had to accommodate this — holding final numbers until a cut-off time rather than reporting prematurely.</p>
+    <p><strong>Anomaly patterns.</strong> Certain error types appeared repeatedly at the same time of day or from the same workstation. Identifying these patterns required looking beyond single-shift data to multi-week trends — something the weekly reports were specifically designed to surface.</p>
+    <p><strong>Report adoption.</strong> Early versions of the dashboard were too detailed for shift managers to digest quickly. The design was simplified — key metrics front and centre, detailed breakdowns behind a second tab — leading to much higher uptake in daily briefings.</p>
+  </div>
+  <div class="section">
+    <h2>Outcomes</h2>
+    <div class="outcome-grid">
+      <div class="outcome-card"><span class="outcome-num">98.4%</span><span class="outcome-label">Data Accuracy</span></div>
+      <div class="outcome-card"><span class="outcome-num">16mo</span><span class="outcome-label">Consistent Reporting</span></div>
+      <div class="outcome-card"><span class="outcome-num">↓40%</span><span class="outcome-label">Recurring Error Rate</span></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag">IBM Cognos Analytics</span><span class="tag">KPI Dashboards</span><span class="tag">Data Validation</span><span class="tag">Anomaly Detection</span><span class="tag">Logistics Ops</span>
+    </div>
+  </div>
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+</div>
+</body>
+</html>

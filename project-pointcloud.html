@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Multi-class point cloud annotation for autonomous systems AI training data pipelines.">
+<meta property="og:title" content="Point Cloud 3D Object Labelling — Segun Olukayode">
+<meta property="og:description" content="Multi-class point cloud annotation for autonomous systems AI training data pipelines.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a1628'/><text y='.9em' font-size='80' x='10'>S</text></svg>">
+<title>Point Cloud Labelling — Segun Olukayode</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a1628;--teal:#1e8f82;--teal-light:#2ec4b6;--gold:#f4a261;--cream:#f4f6f9;--text:#0f172a;--muted:#64748b;--white:#fff;--border:#e2e8f0;}
+html{scroll-behavior:smooth;} *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;}
+nav{background:var(--navy);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+.nav-logo{color:#f4a261;font-family:'Playfair Display',serif;font-size:1rem;}
+.nav-back{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.83rem;}
+.hero{background:linear-gradient(135deg,#1e1a06,#0a1628);padding:80px 5% 60px;}
+.hero-inner{max-width:860px;margin:0 auto;}
+.hero-cat{display:inline-flex;background:rgba(244,162,97,0.1);border:1px solid rgba(244,162,97,0.3);border-radius:100px;padding:0.3rem 0.9rem;color:#f4a261;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.2rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);color:#fff;line-height:1.15;margin-bottom:1rem;}
+.hero h1 span{color:var(--gold);}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;}
+.meta-item{font-size:0.8rem;color:rgba(255,255,255,0.55);}
+.meta-item strong{color:#f4a261;display:block;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.2rem;}
+.content{max-width:860px;margin:0 auto;padding:60px 5%;}
+.section{margin-bottom:3.5rem;}
+.section h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:2px solid var(--gold);}
+.section p{color:#374151;font-size:0.97rem;line-height:1.85;margin-bottom:1rem;}
+.visual-block{background:#0a0800;border-radius:12px;padding:2rem;margin:1.5rem 0;}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:1.5rem 0;}
+.step-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.4rem;}
+.step-num{font-size:0.7rem;font-weight:700;color:#f4a261;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+.step-title{font-weight:700;font-size:0.9rem;color:var(--navy);margin-bottom:0.4rem;}
+.step-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+.outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;}
+.outcome-card{background:var(--navy);border-radius:10px;padding:1.4rem;text-align:center;}
+.outcome-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);display:block;}
+.outcome-label{font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;}
+.tag-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1rem 0;}
+.tag{background:rgba(244,162,97,0.08);border:1px solid rgba(244,162,97,0.2);color:#c47a3a;padding:0.25rem 0.7rem;border-radius:100px;font-size:0.75rem;font-weight:500;}
+.back-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--teal);color:#fff;padding:0.75rem 1.6rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.88rem;margin-top:2rem;}
+</style>
+</head>
+<body>
+<nav><span class="nav-logo">S. Olukayode</span><a href="index.html" class="nav-back" >← Back to Portfolio</a></nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-cat">Point Cloud · 3D Object Labelling · QA</div>
+    <h1>Point Cloud &<br><span>3D Object Labelling</span></h1>
+    <div class="hero-meta">
+      <div class="meta-item"><strong>Type</strong>3D Point Cloud Annotation</div>
+      <div class="meta-item"><strong>Format</strong>.pcd / .las</div>
+      <div class="meta-item"><strong>Output</strong>Autonomous Systems Training Data</div>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="section">
+    <h2>The Brief</h2>
+    <p>Point cloud annotation sits at the frontier of AI training data work. Unlike images — which are flat and familiar — point clouds are raw 3D spatial data: millions of individual points captured by LiDAR or structured light sensors, each with an x, y, z coordinate and often an intensity value. There are no lines, no edges, no clean shapes. Just points in space.</p>
+    <p>The task was to identify meaningful object clusters within these point clouds, assign class labels to each cluster, and document spatial boundaries precisely enough for autonomous perception models to learn from the data. This required strong 3D spatial reasoning and a methodical approach to what is, visually, a dense and chaotic dataset.</p>
+  </div>
+  <div class="section">
+    <h2>The Process</h2>
+    <div class="step-grid">
+      <div class="step-card"><div class="step-num">Step 01</div><div class="step-title">Scan File Loading</div><div class="step-desc">Raw .pcd and .las scan files were loaded and visualised in 3D. Initial inspection assessed point density, scan coverage, and the presence of noise or artefacts requiring pre-processing.</div></div>
+      <div class="step-card"><div class="step-num">Step 02</div><div class="step-title">Noise Filtering</div><div class="step-desc">Statistical outlier removal was applied to clean the point cloud — eliminating stray points far from the main cluster density that would otherwise contaminate the annotation.</div></div>
+      <div class="step-card"><div class="step-num">Step 03</div><div class="step-title">Cluster Segmentation</div><div class="step-desc">Point clusters were segmented — isolating spatially distinct groups of points that corresponded to individual objects. Density-based segmentation was the primary method, supplemented by manual review for ambiguous regions.</div></div>
+      <div class="step-card"><div class="step-num">Step 04</div><div class="step-title">Class Label Assignment</div><div class="step-desc">Each identified cluster was assigned its class label based on its geometric profile and spatial context. Labels followed the project class schema — no improvised classes, no guesses.</div></div>
+      <div class="step-card"><div class="step-num">Step 05</div><div class="step-title">Boundary Documentation</div><div class="step-desc">Tight 3D bounding volumes were fitted around each labelled cluster — axis-aligned boxes for regular objects, oriented bounding boxes for objects at angles. Boundary coordinates were recorded per cluster.</div></div>
+      <div class="step-card"><div class="step-num">Step 06</div><div class="step-title">QA Review & Export</div><div class="step-desc">Annotated scans were reviewed by rotating through multiple viewpoints — checking for missed clusters, label errors, and boundary fit quality — before final export.</div></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Visual Walkthrough</h2>
+    <div class="visual-block">
+      <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <rect width="700" height="300" fill="#060500" rx="8"/>
+        <text x="350" y="20" font-size="9" fill="rgba(255,255,255,0.2)" font-family="monospace" text-anchor="middle">scan_0091.pcd — Annotated Point Cloud</text>
+        <!-- Cluster 1 points -->
+        <g fill="#f4a261" opacity="0.85">
+          <circle cx="120" cy="120" r="3"/><circle cx="135" cy="108" r="2.5"/><circle cx="148" cy="125" r="3"/>
+          <circle cx="128" cy="140" r="2.5"/><circle cx="155" cy="135" r="3"/><circle cx="142" cy="112" r="2"/>
+          <circle cx="160" cy="118" r="2.5"/><circle cx="130" cy="128" r="3"/><circle cx="145" cy="145" r="2"/>
+          <circle cx="118" cy="135" r="2.5"/><circle cx="138" cy="150" r="2"/><circle cx="162" cy="142" r="2.5"/>
+          <circle cx="125" cy="115" r="2"/><circle cx="152" cy="128" r="3"/><circle cx="140" cy="138" r="2.5"/>
+        </g>
+        <!-- Cluster 1 boundary -->
+        <rect x="108" y="98" width="64" height="62" rx="3" fill="none" stroke="#f4a261" stroke-width="2" stroke-dasharray="5,3" opacity="0.8"/>
+        <rect x="108" y="86" width="110" height="14" rx="2" fill="rgba(244,162,97,0.15)" stroke="rgba(244,162,97,0.4)" stroke-width="1"/>
+        <text x="163" y="96" font-size="8" fill="#f4a261" font-family="monospace" text-anchor="middle">OBJ_CLASS_1 · 142pts</text>
+        <!-- Cluster 2 points -->
+        <g fill="#2ec4b6" opacity="0.85">
+          <circle cx="320" cy="140" r="3"/><circle cx="335" cy="128" r="2.5"/><circle cx="348" cy="145" r="3"/>
+          <circle cx="328" cy="160" r="2.5"/><circle cx="355" cy="155" r="3"/><circle cx="342" cy="132" r="2"/>
+          <circle cx="360" cy="148" r="2.5"/><circle cx="330" cy="148" r="3"/><circle cx="345" cy="165" r="2"/>
+          <circle cx="318" cy="155" r="2.5"/><circle cx="338" cy="170" r="2"/><circle cx="362" cy="162" r="2.5"/>
+        </g>
+        <rect x="308" y="118" width="64" height="62" rx="3" fill="none" stroke="#2ec4b6" stroke-width="2" stroke-dasharray="5,3" opacity="0.8"/>
+        <rect x="308" y="106" width="100" height="14" rx="2" fill="rgba(46,196,182,0.12)" stroke="rgba(46,196,182,0.4)" stroke-width="1"/>
+        <text x="358" y="116" font-size="8" fill="#2ec4b6" font-family="monospace" text-anchor="middle">OBJ_CLASS_2 · 98pts</text>
+        <!-- Background/noise points -->
+        <g fill="rgba(255,255,255,0.15)">
+          <circle cx="200" cy="200" r="1.5"/><circle cx="230" cy="190" r="1"/><circle cx="260" cy="210" r="1.5"/>
+          <circle cx="450" cy="180" r="1"/><circle cx="480" cy="200" r="1.5"/><circle cx="510" cy="185" r="1"/>
+          <circle cx="550" cy="220" r="1.5"/><circle cx="580" cy="200" r="1"/><circle cx="610" cy="215" r="1.5"/>
+          <circle cx="400" cy="240" r="1"/><circle cx="420" cy="255" r="1.5"/><circle cx="440" cy="245" r="1"/>
+          <circle cx="80" cy="230" r="1.5"/><circle cx="100" cy="245" r="1"/><circle cx="60" cy="210" r="1.5"/>
+        </g>
+        <!-- Background label -->
+        <text x="500" y="200" font-size="8" fill="rgba(255,255,255,0.25)" font-family="monospace">OBJ_CLASS_3 · background</text>
+        <!-- Stats -->
+        <rect x="30" y="260" width="640" height="25" rx="3" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <text x="50" y="276" font-size="7.5" fill="rgba(255,255,255,0.3)" font-family="monospace">Total points: 12,840 · Labelled clusters: 2 · Background: 12,600 · Export: ✓ validated</text>
+      </svg>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Challenges & Solutions</h2>
+    <p><strong>Cluster ambiguity.</strong> In dense scans, two nearby objects could have overlapping point regions with no clear boundary. A minimum gap threshold was established — if objects were closer than the threshold, each point was assigned probabilistically based on distance to the nearest cluster centroid.</p>
+    <p><strong>Noise vs. real data.</strong> Not all stray points are noise — some are real but sparse parts of the scene. A conservative noise filter was used, retaining borderline points for manual review rather than automatically deleting anything that looked isolated.</p>
+    <p><strong>Viewpoint dependency.</strong> Point cloud annotation looks different from every angle. Each annotated scan was reviewed from at minimum four viewpoints — top, front, side, and isometric — before sign-off.</p>
+  </div>
+  <div class="section">
+    <h2>Outcomes</h2>
+    <div class="outcome-grid">
+      <div class="outcome-card"><span class="outcome-num">3</span><span class="outcome-label">Class Labels Applied</span></div>
+      <div class="outcome-card"><span class="outcome-num">4+</span><span class="outcome-label">Viewpoints Per Review</span></div>
+      <div class="outcome-card"><span class="outcome-num">100%</span><span class="outcome-label">QA Validated</span></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag">Point Cloud Annotation</span><span class="tag">3D Object Labelling</span><span class="tag">Cluster Segmentation</span><span class="tag">LiDAR Data</span><span class="tag">QA Review</span>
+    </div>
+  </div>
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+</div>
+</body>
+</html>

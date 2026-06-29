@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dimension and tolerance annotation of AutoCAD and VectorWorks technical drawings for AI component recognition.">
+<meta property="og:title" content="2D Technical Drawing Annotation — Segun Olukayode">
+<meta property="og:description" content="Dimension and tolerance annotation of AutoCAD and VectorWorks technical drawings for AI component recognition.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a1628'/><text y='.9em' font-size='80' x='10'>S</text></svg>">
+<title>2D Technical Drawing Annotation — Segun Olukayode</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a1628;--teal:#1e8f82;--teal-light:#2ec4b6;--gold:#f4a261;--cream:#f4f6f9;--text:#0f172a;--muted:#64748b;--white:#fff;--border:#e2e8f0;}
+html{scroll-behavior:smooth;} *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;}
+nav{background:var(--navy);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+.nav-logo{color:#f4a261;font-family:'Playfair Display',serif;font-size:1rem;}
+.nav-back{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.83rem;}
+.nav-back:hover{color:var(--teal-light);}
+.hero{background:linear-gradient(135deg,#1e1206,#0a1628);padding:80px 5% 60px;}
+.hero-inner{max-width:860px;margin:0 auto;}
+.hero-cat{display:inline-flex;background:rgba(244,162,97,0.1);border:1px solid rgba(244,162,97,0.3);border-radius:100px;padding:0.3rem 0.9rem;color:#f4a261;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.2rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);color:#fff;line-height:1.15;margin-bottom:1rem;}
+.hero h1 span{color:var(--gold);}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;}
+.meta-item{font-size:0.8rem;color:rgba(255,255,255,0.55);}
+.meta-item strong{color:#f4a261;display:block;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.2rem;}
+.content{max-width:860px;margin:0 auto;padding:60px 5%;}
+.section{margin-bottom:3.5rem;}
+.section h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:2px solid var(--gold);}
+.section p{color:#374151;font-size:0.97rem;line-height:1.85;margin-bottom:1rem;}
+.visual-block{background:#160e04;border-radius:12px;padding:2rem;margin:1.5rem 0;}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:1.5rem 0;}
+.step-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.4rem;}
+.step-num{font-size:0.7rem;font-weight:700;color:#f4a261;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+.step-title{font-weight:700;font-size:0.9rem;color:var(--navy);margin-bottom:0.4rem;}
+.step-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+.outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;}
+.outcome-card{background:var(--navy);border-radius:10px;padding:1.4rem;text-align:center;}
+.outcome-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);display:block;}
+.outcome-label{font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;}
+.tag-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1rem 0;}
+.tag{background:rgba(244,162,97,0.08);border:1px solid rgba(244,162,97,0.2);color:#c47a3a;padding:0.25rem 0.7rem;border-radius:100px;font-size:0.75rem;font-weight:500;}
+.schema-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.85rem;}
+.schema-table th{background:var(--navy);color:#f4a261;padding:0.6rem 1rem;text-align:left;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;}
+.schema-table td{padding:0.6rem 1rem;border-bottom:1px solid var(--border);color:#374151;}
+.back-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--teal);color:#fff;padding:0.75rem 1.6rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.88rem;margin-top:2rem;}
+</style>
+</head>
+<body>
+<nav><span class="nav-logo">S. Olukayode</span><a href="index.html" class="nav-back" >← Back to Portfolio</a></nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-cat">AutoCAD · VectorWorks · LibreCAD</div>
+    <h1>2D Technical Drawing<br><span>Annotation</span></h1>
+    <div class="hero-meta">
+      <div class="meta-item"><strong>Tools</strong>AutoCAD Mechanical · VectorWorks · LibreCAD</div>
+      <div class="meta-item"><strong>Type</strong>Dimension & Part Annotation</div>
+      <div class="meta-item"><strong>Output</strong>AI Component Recognition Data</div>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="section">
+    <h2>The Brief</h2>
+    <p>2D technical drawings are the universal language of manufacturing. Every part that gets machined, cast, or fabricated starts as a flat drawing — a precise document of dimensions, tolerances, materials, and assembly instructions. The challenge was to annotate these drawings so that AI models could read them the way an experienced engineer does.</p>
+    <p>The source files came in AutoCAD DWG, VectorWorks VWX, and LibreCAD DXF formats — a variety that required fluency across platforms. Each drawing had dozens of dimension lines, tolerance callouts, part title blocks, and revision markers that all needed to be tagged, classified, and structured for machine learning ingestion.</p>
+  </div>
+  <div class="section">
+    <h2>The Process</h2>
+    <div class="step-grid">
+      <div class="step-card"><div class="step-num">Step 01</div><div class="step-title">Drawing Intake</div><div class="step-desc">Each drawing was opened and reviewed — understanding the part geometry, reading the title block, and identifying all dimension and annotation elements before labelling began.</div></div>
+      <div class="step-card"><div class="step-num">Step 02</div><div class="step-title">Title Block Extraction</div><div class="step-desc">Part name, number, material, revision, and drawing scale were extracted from the title block and recorded as structured metadata fields for each drawing.</div></div>
+      <div class="step-card"><div class="step-num">Step 03</div><div class="step-title">Dimension Annotation</div><div class="step-desc">Every dimension line was tagged with its value, unit, and type — linear, radial, angular, or ordinate. Dimension chains were traced to ensure no measurement was missed.</div></div>
+      <div class="step-card"><div class="step-num">Step 04</div><div class="step-title">Tolerance Tagging</div><div class="step-desc">Geometric tolerances (GD&T callouts), surface finish symbols, and fit tolerances were identified and labelled with their type and value — critical for AI understanding of precision requirements.</div></div>
+      <div class="step-card"><div class="step-num">Step 05</div><div class="step-title">Part Feature Labelling</div><div class="step-desc">Key geometric features — holes, slots, chamfers, fillets, threads — were labelled by type and linked to their dimensional annotations to create a complete part feature map.</div></div>
+      <div class="step-card"><div class="step-num">Step 06</div><div class="step-title">QA & Export</div><div class="step-desc">Each annotated drawing was reviewed against the original to confirm nothing was missed, then exported in the required structured format with a full annotation manifest.</div></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Annotation Schema</h2>
+    <table class="schema-table">
+      <tr><th>Field</th><th>Example Value</th><th>Description</th></tr>
+      <tr><td>PART</td><td>BRK-04</td><td>Part identifier from title block</td></tr>
+      <tr><td>MAT</td><td>MILD STEEL</td><td>Material specification</td></tr>
+      <tr><td>DIM</td><td>75mm × 40mm</td><td>Key part dimensions</td></tr>
+      <tr><td>TOL</td><td>±0.05mm</td><td>Manufacturing tolerance</td></tr>
+      <tr><td>FEAT</td><td>HOLE_M8</td><td>Named geometric feature</td></tr>
+      <tr><td>REV</td><td>v3</td><td>Drawing revision number</td></tr>
+      <tr><td>FINISH</td><td>Ra 1.6</td><td>Surface finish requirement</td></tr>
+    </table>
+  </div>
+  <div class="section">
+    <h2>Visual Walkthrough</h2>
+    <div class="visual-block">
+      <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <rect width="700" height="300" fill="#0e0802" rx="8"/>
+        <!-- Drawing border -->
+        <rect x="30" y="25" width="640" height="240" rx="2" fill="none" stroke="rgba(244,162,97,0.3)" stroke-width="1.5"/>
+        <!-- Title block -->
+        <rect x="430" y="185" width="230" height="70" rx="1" fill="rgba(244,162,97,0.05)" stroke="rgba(244,162,97,0.3)" stroke-width="1"/>
+        <line x1="430" y1="205" x2="660" y2="205" stroke="rgba(244,162,97,0.2)" stroke-width="0.8"/>
+        <line x1="430" y1="225" x2="660" y2="225" stroke="rgba(244,162,97,0.2)" stroke-width="0.8"/>
+        <line x1="545" y1="185" x2="545" y2="255" stroke="rgba(244,162,97,0.2)" stroke-width="0.8"/>
+        <text x="440" y="199" font-size="7" fill="#f4a261" font-family="monospace">PART: BRK-04</text>
+        <text x="555" y="199" font-size="7" fill="rgba(255,255,255,0.5)" font-family="monospace">REV: v3</text>
+        <text x="440" y="218" font-size="7" fill="rgba(255,255,255,0.5)" font-family="monospace">MAT: MILD STEEL</text>
+        <text x="440" y="238" font-size="7" fill="rgba(255,255,255,0.5)" font-family="monospace">FINISH: Ra 1.6</text>
+        <text x="555" y="218" font-size="7" fill="rgba(255,255,255,0.5)" font-family="monospace">SCALE: 1:2</text>
+        <!-- Part outline -->
+        <path d="M80 70 L80 180 L200 180 L200 140 L280 140 L280 180 L380 180 L380 70 Z" fill="rgba(244,162,97,0.06)" stroke="#f4a261" stroke-width="2"/>
+        <!-- Hole -->
+        <circle cx="160" cy="125" r="18" fill="none" stroke="#2ec4b6" stroke-width="1.5" stroke-dasharray="4,2"/>
+        <circle cx="160" cy="125" r="3" fill="#2ec4b6"/>
+        <text x="185" y="122" font-size="7.5" fill="#2ec4b6" font-family="monospace">HOLE_M8</text>
+        <!-- Dim horizontal -->
+        <line x1="80" y1="200" x2="380" y2="200" stroke="#2ec4b6" stroke-width="1"/>
+        <line x1="80" y1="196" x2="80" y2="204" stroke="#2ec4b6" stroke-width="1.5"/>
+        <line x1="380" y1="196" x2="380" y2="204" stroke="#2ec4b6" stroke-width="1.5"/>
+        <rect x="195" y="193" width="40" height="13" rx="2" fill="#0e0802"/>
+        <text x="215" y="203" font-size="8.5" fill="#2ec4b6" font-family="monospace" text-anchor="middle">75mm</text>
+        <!-- Tol callout -->
+        <rect x="300" y="55" width="95" height="28" rx="2" fill="rgba(155,93,229,0.1)" stroke="#9b5de5" stroke-width="1"/>
+        <text x="347" y="66" font-size="7.5" fill="#9b5de5" font-family="monospace" text-anchor="middle">TOL: ±0.05</text>
+        <text x="347" y="78" font-size="7" fill="rgba(155,93,229,0.6)" font-family="monospace" text-anchor="middle">precision fit</text>
+        <line x1="300" y1="69" x2="280" y2="100" stroke="rgba(155,93,229,0.4)" stroke-width="0.8" stroke-dasharray="2,2"/>
+      </svg>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Challenges & Solutions</h2>
+    <p><strong>Inconsistent drawing standards.</strong> Drawings arrived in a mix of ISO, ANSI, and company-specific standards — each with different tolerance notation, symbol sets, and dimension placement conventions. A cross-reference guide was built to normalise labels regardless of source standard.</p>
+    <p><strong>Overlapping annotations.</strong> In densely detailed drawings, dimension lines often overlapped or shared endpoints. Each annotation had to be traced to its parent feature individually — no assumptions about what a line belonged to.</p>
+    <p><strong>Legacy DXF files.</strong> Older LibreCAD DXF files occasionally had broken geometry or missing layers. These were repaired in LibreCAD before annotation proceeded.</p>
+  </div>
+  <div class="section">
+    <h2>Outcomes</h2>
+    <div class="outcome-grid">
+      <div class="outcome-card"><span class="outcome-num">7</span><span class="outcome-label">Annotation Field Types</span></div>
+      <div class="outcome-card"><span class="outcome-num">3</span><span class="outcome-label">CAD Platforms</span></div>
+      <div class="outcome-card"><span class="outcome-num">98%+</span><span class="outcome-label">Accuracy Rate</span></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag">AutoCAD Mechanical</span><span class="tag">VectorWorks</span><span class="tag">LibreCAD</span><span class="tag">GD&T</span><span class="tag">Dimension Tagging</span><span class="tag">DWG / DXF</span>
+    </div>
+  </div>
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+</div>
+</body>
+</html>

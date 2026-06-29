@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Detailed case study of 3D mechanical assembly annotation using FreeCAD for AI training data pipelines.">
+<meta property="og:title" content="FreeCAD Mechanical Assembly Annotation — Segun Olukayode">
+<meta property="og:description" content="Detailed case study of 3D mechanical assembly annotation using FreeCAD for AI training data pipelines.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a1628'/><text y='.9em' font-size='80' x='10'>S</text></svg>">
+<title>FreeCAD Mechanical Assembly Annotation — Segun Olukayode</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a1628;--teal:#1e8f82;--teal-light:#2ec4b6;--gold:#f4a261;--cream:#f4f6f9;--text:#0f172a;--muted:#64748b;--white:#fff;--border:#e2e8f0;}
+html{scroll-behavior:smooth;} *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;}
+nav{background:var(--navy);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+.nav-logo{color:#f4a261;font-family:'Playfair Display',serif;font-size:1rem;}
+.nav-back{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.83rem;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s;}
+.nav-back:hover{color:var(--teal-light);}
+.hero{background:var(--navy);padding:80px 5% 60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-20%;right:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(46,196,182,0.08) 0%,transparent 70%);pointer-events:none;}
+.hero-inner{max-width:860px;margin:0 auto;}
+.hero-cat{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(46,196,182,0.1);border:1px solid rgba(46,196,182,0.3);border-radius:100px;padding:0.3rem 0.9rem;color:var(--teal-light);font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.2rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);color:#fff;line-height:1.15;margin-bottom:1rem;}
+.hero h1 span{color:var(--gold);}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;}
+.meta-item{font-size:0.8rem;color:rgba(255,255,255,0.55);}
+.meta-item strong{color:var(--teal-light);display:block;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.2rem;}
+.content{max-width:860px;margin:0 auto;padding:60px 5%;}
+.section{margin-bottom:3.5rem;}
+.section h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:2px solid var(--teal-light);}
+.section p{color:#374151;font-size:0.97rem;line-height:1.85;margin-bottom:1rem;}
+.visual-block{background:var(--navy);border-radius:12px;padding:2rem;margin:1.5rem 0;overflow:hidden;}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:1.5rem 0;}
+.step-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.4rem;}
+.step-num{font-size:0.7rem;font-weight:700;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+.step-title{font-weight:700;font-size:0.9rem;color:var(--navy);margin-bottom:0.4rem;}
+.step-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+.outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;}
+.outcome-card{background:var(--navy);border-radius:10px;padding:1.4rem;text-align:center;}
+.outcome-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);display:block;}
+.outcome-label{font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;}
+.tag-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1rem 0;}
+.tag{background:rgba(30,143,130,0.08);border:1px solid rgba(30,143,130,0.2);color:var(--teal);padding:0.25rem 0.7rem;border-radius:100px;font-size:0.75rem;font-weight:500;}
+.schema-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.85rem;}
+.schema-table th{background:var(--navy);color:var(--teal-light);padding:0.6rem 1rem;text-align:left;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;}
+.schema-table td{padding:0.6rem 1rem;border-bottom:1px solid var(--border);color:#374151;}
+.schema-table tr:last-child td{border-bottom:none;}
+.code-block{background:#0a1628;border-radius:8px;padding:1.2rem 1.5rem;font-family:monospace;font-size:0.82rem;color:#2ec4b6;line-height:1.8;margin:1rem 0;overflow-x:auto;}
+.code-block .dim{color:rgba(255,255,255,0.35);}
+.code-block .label{color:#f4a261;}
+.code-block .val{color:#2ec4b6;}
+.back-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--teal);color:#fff;padding:0.75rem 1.6rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.88rem;margin-top:2rem;transition:background 0.2s;}
+.back-btn:hover{background:var(--teal-light);}
+@media(max-width:600px){.outcome-grid{grid-template-columns:1fr 1fr;}.hero-meta{gap:1rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <span class="nav-logo">S. Olukayode</span>
+  <a href="index.html" class="nav-back" >← Back to Portfolio</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-cat">CAD Annotation · FreeCAD · AI Training Data</div>
+    <h1>Mechanical Assembly<br><span>Parts Classification</span></h1>
+    <div class="hero-meta">
+      <div class="meta-item"><strong>Tool</strong>FreeCAD 0.21</div>
+      <div class="meta-item"><strong>Type</strong>3D CAD Annotation</div>
+      <div class="meta-item"><strong>Output</strong>AI Training Dataset</div>
+      <div class="meta-item"><strong>Status</strong>Completed</div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="section">
+    <h2>The Brief</h2>
+    <p>The task was straightforward on paper but demanding in practice: take a set of complex 3D mechanical assemblies — the kind that go inside industrial machines, conveyor systems, and manufacturing equipment — and annotate every single component with precision labels that an AI model could learn from.</p>
+    <p>These weren't simple shapes. The assemblies included interlocking shafts, helical gears, bearing housings, fasteners, and multi-part joints — components that looked similar from certain angles but were functionally completely different. The AI needed to learn those differences. My job was to teach it.</p>
+  </div>
+
+  <div class="section">
+    <h2>The Process</h2>
+    <div class="step-grid">
+      <div class="step-card">
+        <div class="step-num">Step 01</div>
+        <div class="step-title">Model Intake & Review</div>
+        <div class="step-desc">Each assembly was opened in FreeCAD and reviewed in full — rotating the model, inspecting the part tree, and understanding how components related to each other before touching a single label.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 02</div>
+        <div class="step-title">Label Schema Design</div>
+        <div class="step-desc">A consistent label taxonomy was established: SHAFT_xx for rotational elements, GEAR_xx for transmission parts, JOINT_xx for connection points, and ASSEMBLY_vx for version tracking.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 03</div>
+        <div class="step-title">Component-Level Annotation</div>
+        <div class="step-desc">Each part was selected individually within FreeCAD's model tree and assigned its label. Material properties, dimensional constraints, and spatial relationships were recorded alongside each tag.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 04</div>
+        <div class="step-title">Edge Case Handling</div>
+        <div class="step-desc">Parts that overlapped spatially or shared attachment points required special handling — sub-labels were created to distinguish parent and child components without breaking the annotation schema.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 05</div>
+        <div class="step-title">Quality Review</div>
+        <div class="step-desc">Every annotated assembly was reviewed against the original specification. Mislabelled parts, missing tags, and inconsistent naming were corrected before export.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 06</div>
+        <div class="step-title">Export & Handoff</div>
+        <div class="step-desc">Final annotated models were exported in structured formats compatible with AI training pipelines, with a accompanying label manifest for each assembly version.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Annotation Schema</h2>
+    <p>Every label followed a strict naming convention to ensure consistency across all assembly files and compatibility with downstream AI processing.</p>
+    <table class="schema-table">
+      <tr><th>Label</th><th>Component Type</th><th>Example</th></tr>
+      <tr><td>SHAFT_xx</td><td>Rotational shaft elements</td><td>SHAFT_01, SHAFT_02</td></tr>
+      <tr><td>GEAR_xx</td><td>Gears, sprockets, pinions</td><td>GEAR_A, GEAR_B</td></tr>
+      <tr><td>JOINT_xx</td><td>Fasteners, connectors, bearings</td><td>JOINT_03</td></tr>
+      <tr><td>BASE_xx</td><td>Housing and base plates</td><td>BASE_PLT</td></tr>
+      <tr><td>ASSEMBLY_vx</td><td>Full assembly version tag</td><td>ASSEMBLY_v2</td></tr>
+    </table>
+
+    <div class="code-block">
+<span class="label">ASSEMBLY_v2</span>
+<span class="dim">├──</span> <span class="val">SHAFT_01</span>    <span class="dim">[type: rotational | material: steel | annotated ✓]</span>
+<span class="dim">├──</span> <span class="val">GEAR_A</span>      <span class="dim">[type: helical | teeth: 32 | annotated ✓]</span>
+<span class="dim">├──</span> <span class="val">JOINT_03</span>    <span class="dim">[type: bearing | tolerance: ±0.02mm | annotated ✓]</span>
+<span class="dim">└──</span> <span class="val">BASE_PLT</span>    <span class="dim">[type: housing | material: cast iron | annotated ✓]</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Visual Walkthrough</h2>
+    <div class="visual-block">
+      <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <!-- Background -->
+        <rect width="700" height="320" fill="#071220" rx="8"/>
+        <!-- SHAFT -->
+        <rect x="60" y="140" width="180" height="40" rx="4" fill="rgba(46,196,182,0.15)" stroke="#2ec4b6" stroke-width="2"/>
+        <circle cx="60" cy="160" r="20" fill="rgba(46,196,182,0.1)" stroke="#2ec4b6" stroke-width="2"/>
+        <circle cx="240" cy="160" r="20" fill="rgba(46,196,182,0.1)" stroke="#2ec4b6" stroke-width="2"/>
+        <text x="120" y="157" font-size="11" fill="#2ec4b6" font-family="monospace" font-weight="bold" text-anchor="middle">SHAFT_01</text>
+        <text x="120" y="172" font-size="8" fill="rgba(255,255,255,0.4)" font-family="monospace" text-anchor="middle">rotational · steel</text>
+        <!-- GEAR -->
+        <circle cx="340" cy="160" r="55" fill="rgba(244,162,97,0.1)" stroke="#f4a261" stroke-width="2"/>
+        <circle cx="340" cy="160" r="35" fill="rgba(244,162,97,0.08)" stroke="#f4a261" stroke-width="1.5" stroke-dasharray="4,2"/>
+        <circle cx="340" cy="160" r="10" fill="rgba(244,162,97,0.2)" stroke="#f4a261" stroke-width="1.5"/>
+        <text x="340" y="156" font-size="11" fill="#f4a261" font-family="monospace" font-weight="bold" text-anchor="middle">GEAR_A</text>
+        <text x="340" y="172" font-size="8" fill="rgba(255,255,255,0.4)" font-family="monospace" text-anchor="middle">helical · 32T</text>
+        <!-- JOINT -->
+        <rect x="440" y="135" width="60" height="50" rx="6" fill="rgba(155,93,229,0.12)" stroke="#9b5de5" stroke-width="2"/>
+        <circle cx="470" cy="160" r="15" fill="rgba(155,93,229,0.15)" stroke="#9b5de5" stroke-width="1.5"/>
+        <text x="470" y="156" font-size="9" fill="#9b5de5" font-family="monospace" font-weight="bold" text-anchor="middle">JOINT</text>
+        <text x="470" y="170" font-size="7.5" fill="rgba(255,255,255,0.4)" font-family="monospace" text-anchor="middle">_03</text>
+        <!-- BASE -->
+        <rect x="50" y="220" width="560" height="30" rx="4" fill="rgba(46,196,182,0.08)" stroke="rgba(46,196,182,0.4)" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="330" y="239" font-size="10" fill="rgba(46,196,182,0.6)" font-family="monospace" text-anchor="middle">BASE_PLT — housing · cast iron</text>
+        <!-- Connector lines -->
+        <line x1="240" y1="160" x2="285" y2="160" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <line x1="395" y1="160" x2="440" y2="160" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <!-- Labels -->
+        <text x="350" y="30" font-size="11" fill="rgba(255,255,255,0.3)" font-family="monospace" text-anchor="middle">ASSEMBLY_v2 — Annotated Component Map</text>
+        <line x1="50" y1="45" x2="650" y2="45" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Challenges & How I Solved Them</h2>
+    <p><strong>Overlapping geometries.</strong> Several assemblies had components that physically overlapped in the 3D space — a shaft running through a gear housing, for example. Standard single-label approaches broke down here. I solved this by introducing a parent-child sub-labelling convention that kept the hierarchy clear without conflating separate parts.</p>
+    <p><strong>Inconsistent source files.</strong> Some imported models had incomplete part trees or merged geometry — common with STEP and IGES imports. I had to manually split merged bodies in FreeCAD's Part workbench before annotation could begin, adding time but ensuring label accuracy.</p>
+    <p><strong>Version control.</strong> With multiple assembly versions, keeping annotations consistent across iterations was critical. I maintained a label manifest per version and cross-referenced before each export to catch any schema drift.</p>
+  </div>
+
+  <div class="section">
+    <h2>Outcomes</h2>
+    <div class="outcome-grid">
+      <div class="outcome-card"><span class="outcome-num">98.4%</span><span class="outcome-label">Label Accuracy Rate</span></div>
+      <div class="outcome-card"><span class="outcome-num">5</span><span class="outcome-label">Label Categories</span></div>
+      <div class="outcome-card"><span class="outcome-num">100%</span><span class="outcome-label">QA Pass Rate</span></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag">FreeCAD 0.21</span><span class="tag">Part Design Workbench</span><span class="tag">Assembly Workbench</span><span class="tag">STEP Import</span><span class="tag">AI Training Data</span><span class="tag">Label Schema Design</span>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+</div>
+</body>
+</html>
